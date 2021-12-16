@@ -17,10 +17,23 @@ O dono do portfolio poderá:
 
  ## Layout
 
- Ainda não existe
+ Ainda não existe.
+
+ ### Cores
+
+- Cores utilizadas: 
+   Preto: #222222
+   Preto: #1c1c1c
+   Bege:  #e7c282
+
+ ### fontes
+
+ Caveat &#40; Regular &#41;
+ Bebas Neue &#40; Regular &#41;
 
  ### Mobile
 
+ 
  ### Web
 
 ## Tecnologias
