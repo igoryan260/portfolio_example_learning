@@ -19,10 +19,6 @@ O dono do portfolio poderá:
 
  Ainda não existe.
 
-  ### Mobile
-
- 
- ### Web
 
  ### Cores
 
@@ -44,8 +40,6 @@ As tecnologias utilizadas no projeto
 - [node.js][node.js]
 - [css3][css3]
 - [mongodb][mongodb]
-
-## Features
 
 ## Demonstração da aplicação
 
