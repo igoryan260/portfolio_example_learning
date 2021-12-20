@@ -19,6 +19,11 @@ O dono do portfolio poderá:
 
  Ainda não existe.
 
+  ### Mobile
+
+ 
+ ### Web
+
  ### Cores
 
 - Cores utilizadas: 
@@ -30,11 +35,6 @@ O dono do portfolio poderá:
 
  Caveat &#40; Regular &#41;
  Bebas Neue &#40; Regular &#41;
-
- ### Mobile
-
- 
- ### Web
 
 ## Tecnologias
 
