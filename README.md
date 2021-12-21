@@ -19,7 +19,10 @@ O dono do portfolio poderá:
 
 Layouts disponíveis neste link:
 
+<<<<<<< HEAD
 <a>https://drive.google.com/drive/folders/1etaWLMRTP3kW4XHZERfB-unQxt7FWbxj?usp=sharing</a>
+=======
+>>>>>>> 6b069956ed3b58008ea2267b47835940eaab14c6
 
  ### Cores
 
@@ -41,8 +44,6 @@ As tecnologias utilizadas no projeto
 - [node.js][node.js]
 - [css3][css3]
 - [mongodb][mongodb]
-
-## Features
 
 ## Demonstração da aplicação
 

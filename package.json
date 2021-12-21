@@ -1,0 +1,26 @@
+{
+  "name": "portfolio_example_learning",
+  "version": "1.0.0",
+  "description": "Portfolio de exemplo para pratica de trabalho em equipe e tecnologias",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igoryan260/portfolio_example_learning.git"
+  },
+  "author": "Igor; Othon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/igoryan260/portfolio_example_learning/issues"
+  },
+  "homepage": "https://github.com/igoryan260/portfolio_example_learning#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "consign": "^0.1.6",
+    "express": "^4.17.2",
+    "mongodb": "^4.2.2",
+    "nodemon": "^2.0.15"
+  }
+}
