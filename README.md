@@ -17,12 +17,9 @@ O dono do portfolio poderá:
 
  ## Layout
 
- Ainda não existe.
+Layouts disponíveis neste link:
 
-  ### Mobile
-
- 
- ### Web
+<a>https://drive.google.com/drive/folders/1etaWLMRTP3kW4XHZERfB-unQxt7FWbxj?usp=sharing</a>
 
  ### Cores
 
@@ -50,6 +47,10 @@ As tecnologias utilizadas no projeto
 ## Demonstração da aplicação
 
 ## Requisitos para rodar esta aplicação
+
+ - Ter o NODE.js instalado na máquina
+ - Instalar as seguintes dependências :
+  nodemon; consign; mongodb; express; body-parser.
 
 ## Autor
 
