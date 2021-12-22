@@ -1,0 +1,127 @@
+*{
+    padding: 0;
+    margin: 0;   
+}
+
+body {
+    margin: 30px;
+    background: #222222;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2 {
+    font-family: "Bebas Neue";
+}
+
+hgroup h1{
+    color: white;
+}
+
+hgroup h2 {
+    color: #e7c282;
+}
+
+@font-face {
+    font-family: "Bebas Neue";
+    src: url(../../fonts/BebasNeue-Regular.woff);
+}
+
+@font-face {
+    font-family: "Caveat";
+    src: url(../../fonts/Caveat-Regular.woff);
+}
+
+#nav-menu-mobile {
+    display: none;
+}
+
+#nav-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav-info-perfil{
+    display: flex;
+    align-items: center;
+}
+
+#nav-info-perfil a{
+    padding-right: 10px;
+    font-size: 2.5rem;
+}
+
+.caveat{
+    font-family: "Caveat";
+    color: white;
+}
+
+
+
+#imagem-perfil {
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    background-image: url(../../image/images/perfil.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+#menu-desktop{
+    display: flex;
+    align-items: baseline;
+}
+
+.subMenu-desktop {
+    display: none;
+}
+
+.icones{
+    font-size: 30px;
+    color: white;
+    padding-left: 25px;
+}
+
+#menu-hamburguer, #menu-hamburguer1{
+    color: white;
+    padding-left: 25px;
+}
+
+
+#menu-hamburguer::before{
+    content: '';
+    display: block;
+    width: 40px;
+    background:currentColor;
+    height: 1.5px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+#menu-hamburguer::after{
+    content: '';
+    display: block;
+    width: 45px;
+    background:currentColor;
+    height: 2px;
+    margin-top: 10px;
+}
+
+#menu-hamburguer1::before{
+    content: '';
+    display: block;
+    width: 35px;
+    background:currentColor;
+    height: 2px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
