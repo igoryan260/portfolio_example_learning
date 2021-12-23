@@ -14,60 +14,63 @@
         <title>Início</title>
     </head>
     <body>
-        <div>
+        <div id="grid">
             <header>
                 <nav id="nav-principal">
                     <nav id="nav-info-perfil">
-                        <a href="#"><div id="imagem-perfil"></div></a>
+                        <a href="#"><img src="../../image/images/perfil.jpg" alt="" id="imagem-perfil"></a>
                         <a href="#"><span class="caveat">Roberto Designer</span></a>
                     </nav>
 
                     <nav id="nav-menu-desktop">
                         <ul id="menu-desktop">
                             <li>
-                                <span id="contatos" class="icones"><i class="far fa-comments"></i></span>
-                                <ul class="subMenu-desktop">
+                                <span id="contatos" class="itens-menu"><i class="far fa-comments"></i></span>
+                                <ul id="subMenu-contatos">
                                     <li><a href="#">Whatsapp</a></li>
                                     <li><a href="#">E-mail</a></li>
                                     <li><a href="#">Telefone</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <span id="configuracoes" class="icones"><i class="fas fa-cog"></i></span>
-                                <ul class="subMenu-desktop">
+                                <span id="configuracoes" class="itens-menu"><i class="fas fa-cog"></i></span>
+                                <ul id="subMenu-configuracoes">
                                     <li><a href="#">Tema claro</a></li>
                                     <li><a href="#">Tema Escuro</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <div id="menu-hamburguer"></div>
-                                <div id="menu-hamburguer1"></div>
-                                <ul class="subMenu-desktop">
+                                <div id="menu-hamburguer">
+                                    <div id="primeira-barra"></div>
+                                    <div id="segunda-barra"></div>
+                                    <div id="terceira-barra"></div>
+                                </div>
+                                <ul id="subMenu-hamburguer">
                                     <li><a href="#">Sobre mim</a></li>
                                     <li><a href="#">Serviços</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </nav>
-                </nav>
 
-                <nav id="nav-menu-mobile">
-                    <span>Menu</span>
-                    <ul>
-                        <li><a href="#">Sobre mim</a></li>
-                        <li><a href="#">Contatos</a></li>
+                    <nav id="nav-menu-mobile">
+                        <span>Menu</span>
                         <ul>
-                            <li><a href="#">Whatsapp</a></li>
-                            <li><a href="#">E-mail</a></li>
-                            <li><a href="#">Telefone</a></li>
+                            <li><a href="#">Sobre mim</a></li>
+                            <li><a href="#">Contatos</a></li>
+                            <ul>
+                                <li><a href="#">Whatsapp</a></li>
+                                <li><a href="#">E-mail</a></li>
+                                <li><a href="#">Telefone</a></li>
+                            </ul>
+                            <li><a href="#">Serviços</a></li>
+                            <ul>
+                                <li><a href="#">Tema claro</a></li>
+                                <li><a href="#">Tema Escuro</a></li>
+                            </ul>
                         </ul>
-                        <li><a href="#">Serviços</a></li>
-                        <ul>
-                            <li><a href="#">Tema claro</a></li>
-                            <li><a href="#">Tema Escuro</a></li>
-                        </ul>
-                    </ul>
-                </nav>
+                    </nav>
+                </nav>      
             </header>
             <main>
                 <hgroup>
@@ -75,18 +78,33 @@
                     <h2>Espero que goste dos projetos, e que eu possa realizar essa grande etapa de sua vida.</h2>
                 </hgroup>
 
-                <h2>Últimos projetos</h2>
+                <h3>Últimos Projetos</h3>
                 <section>
                     <article>
-                        <img src="" alt="">
+                        <img src="../../image/images/exemplo-projeto.jpg" alt="">
                         <p>
                             Projeto 1
+                        </p>
+                    </article>
+
+                    <article>
+                        <img src="../../image/images/exemplo-projeto.jpg" alt="">
+                        <p>
+                            Projeto 2
+                        </p>
+                    </article>
+
+                    <article>
+                        <img src="../../image/images/exemplo-projeto.jpg" alt="">
+                        <p>
+                            Projeto 3
                         </p>
                     </article>
                 </section>
             </main>
             <footer>
-                <span>&copy;</span> <span>Desenvolvido por Roberto - 2021</span>
+                <span id="copyright">&copy;</span>
+                <h2>Desenvolvido por Roberto - 2021</h2>
             </footer>
         </div>
     </body>

@@ -3,13 +3,34 @@
     margin: 0;   
 }
 
+@font-face {
+    font-family: "Bebas Neue";
+    src: url(../../fonts/BebasNeue-Regular.woff);
+}
+
+@font-face {
+    font-family: "Caveat";
+    src: url(../../fonts/Caveat-Regular.woff);
+}
+
 body {
     margin: 30px;
-    background: #222222;
+    background: #151515;
+    background-image: url(../../image/images/bg-designer.jpg);
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position:center top;
+}
+
+#grid{
+    display: grid;
+    grid-template-rows: auto 80vh auto;
 }
 
 a {
     text-decoration: none;
+    font-family: "Caveat";
+    color: white;
 }
 
 ul {
@@ -20,23 +41,25 @@ h1, h2 {
     font-family: "Bebas Neue";
 }
 
+h3 {
+    font-family: "Caveat";
+    color: white;
+    font-size: 1.4rem;
+    margin-left: 10px;
+}
+
 hgroup h1{
     color: white;
+    font-size: 6rem;
+    margin-left: 10px;
 }
 
 hgroup h2 {
     color: #e7c282;
+    margin-left: 40px;
 }
 
-@font-face {
-    font-family: "Bebas Neue";
-    src: url(../../fonts/BebasNeue-Regular.woff);
-}
-
-@font-face {
-    font-family: "Caveat";
-    src: url(../../fonts/Caveat-Regular.woff);
-}
+/* - INÍCIO HEADER */
 
 #nav-menu-mobile {
     display: none;
@@ -56,22 +79,20 @@ hgroup h2 {
 #nav-info-perfil a{
     padding-right: 10px;
     font-size: 2.5rem;
-}
-
-.caveat{
-    font-family: "Caveat";
-    color: white;
-}
-
-
-
-#imagem-perfil {
-    width: 70px;
     height: 70px;
-    border-radius: 70px;
-    background-image: url(../../image/images/perfil.jpg);
-    background-position: center center;
-    background-size: cover;
+}
+
+
+#imagem-perfil{
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    /* - CASO QUERER COLOCAR UMA BORDA NA IMAGEM COM AS CORES TEMÁTICAS DO SITE
+    border-top: 1px solid white;
+    border-bottom: 1px solid #e7c282;
+    border-right: 1px solid white;
+    border-left: 1px solid #e7c282;  
+    */
 }
 
 #menu-desktop{
@@ -79,49 +100,88 @@ hgroup h2 {
     align-items: baseline;
 }
 
-.subMenu-desktop {
+#subMenu-contatos, #subMenu-configuracoes, #subMenu-hamburguer {
     display: none;
 }
 
-.icones{
+
+
+.itens-menu{
     font-size: 30px;
     color: white;
-    padding-left: 25px;
-}
-
-#menu-hamburguer, #menu-hamburguer1{
-    color: white;
-    padding-left: 25px;
+    margin-left: 30px;
 }
 
 
-#menu-hamburguer::before{
-    content: '';
-    display: block;
-    width: 40px;
-    background:currentColor;
-    height: 1.5px;
+#menu-hamburguer div{
+    border-top: 2px solid white;
     margin-top: 10px;
-    margin-left: 5px;
+    margin-left: 30px;
+    position: relative;
+    
 }
 
-#menu-hamburguer::after{
-    content: '';
-    display: block;
+#primeira-barra{
+    width: 50px;
+    left: 5px
+}
+
+#segunda-barra{
+    width: 55px;
+}
+
+#terceira-barra{
     width: 45px;
-    background:currentColor;
-    height: 2px;
-    margin-top: 10px;
+    left: 10px
 }
 
-#menu-hamburguer1::before{
-    content: '';
-    display: block;
-    width: 35px;
-    background:currentColor;
-    height: 2px;
-    margin-top: 10px;
-    margin-left: 10px;
+/* - FIM HEADER */
+
+/* - INÍCIO MAIN */
+
+main h3{
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
+
+section {
+    display: flex;
+    gap: 30px;
+}
+
+article img {
+    width: 150px;
+    height: 220px;
+    border-radius: 10px;
+}
+
+article p {
+    font-family: "Caveat";
+    color: white;
+    font-size: 1.3rem;
+    width: 150px;
+    text-align: center;
+}
+
+/* - FIM MAIN */
+
+footer{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+footer h2{
+    color: #e7c282;
+    font-size: 1.2rem;
+    margin-left: 15px;
+}
+
+#copyright{
+    color: white;
+    font-size: 1.4rem;
+}
+
+
 
 
