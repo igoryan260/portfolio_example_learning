@@ -24,7 +24,6 @@ consign()
     .include('app/controllers')
     .then('app/models')
     .then('app/routes')
-    .then('app/views')
     .into(app)
 
 app.listen(port, () => {
