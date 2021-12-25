@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+    <!--<link rel="stylesheet" href="../public/css">-->
+
+    <!--Link das fontes utilizadas-->
+    <script src="https://kit.fontawesome.com/11a0ae1d38.js" crossorigin="anonymous"></script>
+    <title>Administrador</title>
+</head>
+
+<body>
+
+    <main>
+        <hgroup>
+            <h1>Portfolio Dinâmico</h1>
+        </hgroup>
+    </main>
+
+
+    <!--Este formulário abaixo serve para fazer o login-->
+    <form action="admin/login" method="post" id="form-login">
+        <label for="admin">Admin</label>
+        <input type="text" name="nomeLogin" id="admin">
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senhaLogin">
+
+        <input type="submit" value="Entrar">
+    </form>
+
+    <button>Inscrever</button>
+
+    <!--Este formulário abaixo serve para fazer um cadastro
+        ele aparecerá conforme o usuario clica no botão de se inscrever
+        -->
+    <form action="admin/register" method="post" id="form-register">
+        <label for="adminRegister">Admin</label>
+        <input type="text" name="adminRegister" id="adminRegister">
+
+        <label for="senhaRegister">Senha</label>
+        <input type="password" name="senhaRegister" id="senhaRegister">
+
+        <input type="submit" value="Inscrever">
+    </form>
+
+    <div>
+        <footer>
+            <span id="copyright">&copy;</span>
+            <h2>Desenvolvido por Roberto - 2021</h2>
+        </footer>
+    </div>
+
+</body>
+
+</html>
