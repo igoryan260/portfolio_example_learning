@@ -1,4 +1,9 @@
+//esta variável representa o framework que criptografa as informações confidenciais do usuário
 var md5 = require("md5")
+const { MongoClient } = require("mongodb")
+var uri = "mongodb://localhost:27017"
+const client = new MongoClient(uri)
+const objectId = require("mongodb").ObjectId
 
 module.exports.login = (req, res) => {
 
@@ -25,12 +30,9 @@ module.exports.login = (req, res) => {
 
             //o codigo abaixo irá verificar o resultado que é um array, e logo pegará seu primeiro índice e comparar com a informação digitada no formulário
             if (result[0]) {
+
                 if (result[0].administrador === req.body.nomeLogin) {
-                    res.send("Você existe na base de dados: " + result[0].administrador)
-                        //console.log("Você existe na base de dados")
-                } else {
-                    //console.log("Você não existe na base de dados")
-                    res.send("Você não existe na base de dados")
+                    res.render("administrar.ejs")
                 }
             } else {
                 //caso não tenha retornado nada na variável "result", a aplicação retornará na página 'admin' com o erro
@@ -45,12 +47,6 @@ module.exports.login = (req, res) => {
         }
     }
     run().catch(console.dir);
-
-
-    //aqui eu faço um teste para saber se o servidor consegue recuperar as informações do body
-    //console.log(req.body.nomeAdm)
-    //res.send("Página de administrador: " + req.body.nomeAdm)
-
 }
 
 module.exports.register = (req, res) => {
@@ -90,4 +86,50 @@ module.exports.register = (req, res) => {
     }
 
     run().catch(console.dir)
+}
+
+module.exports.novaPostagem = (req, res) => {
+
+    async function run() {
+        try {
+
+            await client.connect()
+
+            //conectando à base de dados do portfolio exemplo
+            const database = client.db("portfolio_example")
+
+            //nestas primeiras linhas de código, eu preciso pegar o objectId do usuario logado e após isso inserir esta referência no documento de postagens
+            //no caso, cada postagem vai ter o código do objectId do usuário autenticado para refernciar o dono da postagem
+
+            //collection dos usuários
+            const collectionSearch = database.collection("admin")
+            const userSearch = { administrador: "Igor" }
+
+            //resultado da busca pelo usuário
+            const resultSearch = await collectionSearch.findOne(userSearch)
+                //converter de ObjectId para string normal
+            const userId = resultSearch._id.toHexString()
+
+
+            //agora vamos pegar a nova postagem e adicionar no documento de postagem juntamente com o id do usuario, da seguinte forma
+
+            const newPost = {
+                userId: userId,
+                tituloProjeto: req.body.tituloProjeto,
+                imagemCapaProjeto: req.file.path
+            }
+
+            //criando a collection dos uploads dos projetos
+            const collectionProjects = database.collection("projects")
+
+            //inserindo novo documento na base de dados
+            await collectionProjects.insertOne(newPost)
+
+        } finally {
+            await client.close()
+        }
+    }
+
+    run().catch(console.dir)
+    res.render("administrar.ejs")
 }
