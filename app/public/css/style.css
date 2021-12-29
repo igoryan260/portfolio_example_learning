@@ -123,6 +123,27 @@ hgroup h2 {
     gap: 8px;
 }
 
+.esconder-subMenu-contatos, .esconder-subMenu-configuracoes, .esconder-subMenu-hamburguer{
+    display: flex !important;
+    position: fixed;
+    flex-direction: column;
+    right: 30px;
+    border: 2px solid #151515;
+    border-radius: 10px;
+    padding: 30px 50px 30px 50px;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    gap: 8px;
+    transition-duration: .5s;
+    transition-delay: .5s;
+}
+
+.esconder-subMenu-contatos li a, .esconder-subMenu-configuracoes li a, .esconder-subMenu-hamburguer li a{
+    color:#151515;
+    transition-duration: .5s;
+    transition-delay: .5s;
+}
+
 #subMenu-contatos a:hover, #subMenu-configuracoes a:hover, #subMenu-hamburguer a:hover{
     color: #e7c282;
 }

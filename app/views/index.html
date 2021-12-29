@@ -24,7 +24,7 @@
                     <nav id="nav-menu-desktop">
                         <ul id="menu-desktop">
                             <li>
-                                <span id="contatos" class="itens-menu" onmouseover="mostrarContatos(); esconderHamburguer(); esconderConfiguracoes()"><i class="far fa-comments"></i></span>
+                                <span id="contatos" class="itens-menu" onmouseover="mostrarContatos(); esconderHamburguer(); esconderConfiguracoes()" onmouseout="timeContatos()"><i class="far fa-comments"></i></span>
                                 <ul id="subMenu-contatos"  onmouseover="mostrarContatos()" onmouseout="esconderContatos()">
                                     <li><a href="#">Whatsapp</a></li>
                                     <li><a href="#">E-mail</a></li>
@@ -32,14 +32,14 @@
                                 </ul>
                             </li>
                             <li>
-                                <span id="configuracoes" class="itens-menu" onmouseover="mostrarConfiguracoes(); esconderHamburguer(); esconderContatos()"><i class="fas fa-cog"></i></span>
+                                <span id="configuracoes" class="itens-menu" onmouseover="mostrarConfiguracoes(); esconderHamburguer(); esconderContatos()" onmouseout="timeConfiguracoes()"><i class="fas fa-cog"></i></span>
                                 <ul id="subMenu-configuracoes" onmouseover="mostrarConfiguracoes()" onmouseout="esconderConfiguracoes()">
                                     <li><a href="#">Tema claro</a></li>
                                     <li><a href="#">Tema Escuro</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <div id="menu-hamburguer" onmouseover="mostrarHamburguer(); esconderContatos(); esconderConfiguracoes()">
+                                <div id="menu-hamburguer" onmouseover="mostrarHamburguer(); esconderContatos(); esconderConfiguracoes()" onmouseout="timeHamburguer()">
                                     <div id="primeira-barra"></div>
                                     <div id="segunda-barra"></div>
                                     <div id="terceira-barra"></div>
@@ -48,7 +48,7 @@
                                     <li><a href="#">Sobre mim</a></li>
                                     <li><a href="#">Serviços</a></li>
                                 </ul>
-                            </li>
+                            </li> 
                         </ul>
                     </nav>
 
