@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+    <!--<link rel="stylesheet" href="../public/css">-->
+
+    <!--Link das fontes utilizadas-->
+    <script src="https://kit.fontawesome.com/11a0ae1d38.js" crossorigin="anonymous"></script>
+    <title>Administrar - User</title>
+
+    <!-- Vamos criar um arquivo javascript e com ele vamos captar os dados do formulário de 'new project' e mandar para o backend-->
+    <script>
+        $(document).ready(function() {
+
+            var xhr = new XMLHttpRequest()
+
+
+            let formPostagem = document.getElementById('form-new-project')
+
+            formPostagem.onsubmit = async(e) => {
+
+                //criar form data
+                e.preventDefault();
+
+                let response = await fetch('http://localhost/admin/new-post', {
+                    method: 'POST',
+                    body: new FormData(formPostagem)
+                });
+
+                let result = await response.json();
+
+            }
+        })
+    </script>
+
+</head>
+
+<body>
+
+
+    <form id="form-new-project" method="post" enctype="multipart/form-data" action="/admin/new-post">
+        <legend>
+            <h1>Adicionar Projeto</h1>
+        </legend>
+        <label for="img-new-project">Escolha seu projeto</label>
+        <input type="file" name="imagemCapaProjeto"><br />
+        <label for="title-new-project">Título do projeto</label>
+        <input type="text" name="tituloProjeto" id="title-new-project">
+        <input type="submit" value="Enviar projeto">
+    </form>
+
+    <button><a href="/admin ">Voltar</a></button>
+
+
+</body>
+
+</html>

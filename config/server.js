@@ -1,5 +1,5 @@
 const express = require("express");
-const consign = require("consign")
+var consign = require("consign")
 const app = express()
 
 //porta em que o servidor irá rodar
@@ -12,7 +12,8 @@ app.set('view-engine', 'ejs')
 app.set('views', './app/views')
 
 //configurando onde estão os arquivos estáticos da aplicação (css, js, images)
-app.set(express.static('./app/public'))
+//app.set(express.static('.app/public'))
+app.use(express.static('app/public'));
 
 //configurando o middlware para reconhecer os dados de uma requisição via body
 app.use(express.urlencoded({ extended: true }))
@@ -24,7 +25,6 @@ consign()
     .include('app/controllers')
     .then('app/models')
     .then('app/routes')
-    .then('app/views')
     .into(app)
 
 app.listen(port, () => {

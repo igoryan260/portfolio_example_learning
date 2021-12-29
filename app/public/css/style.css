@@ -5,18 +5,18 @@
 
 @font-face {
     font-family: "Bebas Neue";
-    src: url(../../fonts/BebasNeue-Regular.woff);
+    src: url(../../../fonts/BebasNeue-Regular.woff);
 }
 
 @font-face {
     font-family: "Caveat";
-    src: url(../../fonts/Caveat-Regular.woff);
+    src: url(../../../fonts/Caveat-Regular.woff);
 }
 
 body {
     margin: 30px;
     background: #151515;
-    background-image: url(../../image/images/bg-designer.jpg);
+    background-image: url(../image/images/bg-designer.jpg);
     background-size: 30%;
     background-repeat: no-repeat;
     background-position:center top;
