@@ -13,6 +13,7 @@ module.exports.login = (req, res) => {
     // Create a new MongoClient
     const client = new MongoClient(uri);
     async function run() {
+
         try {
             // Connect the client to the server
             await client.connect();
@@ -27,16 +28,24 @@ module.exports.login = (req, res) => {
             // a variavel abaixo se transformará num array contendo as informações retiradas do banco de dados
             const result = await colecao.find({ administrador: req.body.nomeLogin, senha: { $eq: req.body.senhaLogin } }).toArray()
 
-
             //o codigo abaixo irá verificar o resultado que é um array, e logo pegará seu primeiro índice e comparar com a informação digitada no formulário
             if (result[0]) {
 
                 if (result[0].administrador === req.body.nomeLogin) {
-                    res.render("administrar.ejs")
+                    //agora vamos criar uma sessão, caso o usuário tiver sido autenticado ele pode criar a sessão que só será destruida caso ele mesmo queira sair
+                    req.session.autenticado = true
+                        //criando a sessão onde o objectId do usuário possa ser recuperado em qualquer página do servidor
+                    req.session.userId = result[0]._id.toHexString()
                 }
             } else {
                 //caso não tenha retornado nada na variável "result", a aplicação retornará na página 'admin' com o erro
-                res.send("Nenhum usuário encontrado")
+                res.send("Usuário não encontrado")
+            }
+
+            if (req.session.autenticado === true) {
+                res.render("administrar.ejs")
+            } else {
+                res.render("admin.ejs")
             }
 
             console.log("Connected successfully to server");
@@ -46,6 +55,7 @@ module.exports.login = (req, res) => {
             console.log("Connection closed successfully")
         }
     }
+
     run().catch(console.dir);
 }
 
@@ -132,4 +142,27 @@ module.exports.novaPostagem = (req, res) => {
 
     run().catch(console.dir)
     res.render("administrar.ejs")
+}
+
+module.exports.pegarPostagens = (req, res) => {
+    async function run() {
+        try {
+
+            await client.connect()
+
+            const bd = client.db("portfolio_example")
+            const collection = bd.collection("projects")
+
+            const result = await collection.find({ userId: "61c732c237b40a199293a9b7" }).toArray()
+
+            console.log(result)
+
+        } finally {
+            await client.close()
+        }
+
+        res.send("Pronto")
+    }
+
+    run().catch(console.dir)
 }

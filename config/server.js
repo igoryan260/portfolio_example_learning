@@ -1,6 +1,8 @@
 const express = require("express");
 var consign = require("consign")
 const app = express()
+    //importar o express -session
+var expressSession = require('express-session')
 
 //porta em que o servidor irá rodar
 let port = 80
@@ -20,6 +22,17 @@ app.use(express.urlencoded({ extended: true }))
 
 //configurando a aplicação para receber e reconhecer dados 'json'
 app.use(express.json())
+
+//criando e configurando sessões na aplicação
+app.set('trust proxy', 1)
+
+//cinfigurar o middlware do express-session
+app.use(expressSession({
+    secret: 'Chave de sessão',
+    resave: false,
+    saveUninitialized: false
+}))
+
 
 consign()
     .include('app/controllers')
