@@ -24,7 +24,7 @@ body {
 
 #grid{
     display: grid;
-    grid-template-rows: auto 80vh auto;
+    grid-template-rows: auto 78vh auto;
 }
 
 a {
@@ -87,12 +87,10 @@ hgroup h2 {
     height: 70px;
     width: 70px;
     border-radius: 100%;
-    /* - CASO QUERER COLOCAR UMA BORDA NA IMAGEM COM AS CORES TEMÁTICAS DO SITE
-    border-top: 1px solid white;
-    border-bottom: 1px solid #e7c282;
-    border-right: 1px solid white;
-    border-left: 1px solid #e7c282;  
-    */
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    border-left: 2px solid white;
 }
 
 #menu-desktop{
@@ -100,11 +98,34 @@ hgroup h2 {
     align-items: baseline;
 }
 
-#subMenu-contatos, #subMenu-configuracoes, #subMenu-hamburguer {
+#subMenu-hamburguer{
+    margin-top: 20px;
+}
+
+#subMenu-contatos, #subMenu-configuracoes, #subMenu-hamburguer{
     display: none;
 }
 
+.subMenu-contatos, .subMenu-configuracoes, .subMenu-hamburguer{
+    display: none;
+}
 
+.mostrar-subMenu-contatos, .mostrar-subMenu-configuracoes, .mostrar-subMenu-hamburguer{
+    display: flex !important;
+    position: fixed;
+    flex-direction: column;
+    right: 30px;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 30px 50px 30px 50px;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    gap: 8px;
+}
+
+#subMenu-contatos a:hover, #subMenu-configuracoes a:hover, #subMenu-hamburguer a:hover{
+    color: #e7c282;
+}
 
 .itens-menu{
     font-size: 30px;
