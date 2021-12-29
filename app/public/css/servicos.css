@@ -1,0 +1,39 @@
+@import url(style.css);
+
+body {
+    margin: 30px;
+    background: #151515;
+    background-image: none !important;
+}
+hgroup {
+    margin-top: 25px;
+}
+
+hgroup h1{
+    color: #e7c282;
+    font-size: 5rem;
+    margin-left: 10px;
+}
+
+hgroup h2 {
+    color: white;
+    margin-left: 120px;
+    font-size: 2.5rem;
+    margin-top: 30px;
+    letter-spacing: 1px;
+}
+
+section {
+    margin-top: 40px;
+    display: flex;
+    margin-left: 170px;
+    gap: 100px;
+}
+
+article p{
+    color: white;
+    font-size: 2.5rem;
+    font-family: "Bebas Neue";
+    width: 100%;
+    text-align:left;
+}

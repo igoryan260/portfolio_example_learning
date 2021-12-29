@@ -47,16 +47,20 @@ h3 {
     font-size: 1.4rem;
     margin-left: 10px;
 }
-
+hgroup {
+    margin-top: 10px;
+}
 hgroup h1{
     color: white;
-    font-size: 6rem;
+    font-size: 5rem;
     margin-left: 10px;
+    letter-spacing: 3px;
 }
 
 hgroup h2 {
     color: #e7c282;
     margin-left: 40px;
+    font-size: 1.3rem;
 }
 
 /* - INÍCIO HEADER */
@@ -164,17 +168,18 @@ hgroup h2 {
 }
 
 #primeira-barra{
-    width: 50px;
-    left: 5px
+    width: 55px;
+    right: 5px;
 }
 
 #segunda-barra{
-    width: 55px;
+    width: 40px;
+    left: 10px;
 }
 
 #terceira-barra{
-    width: 45px;
-    left: 10px
+    width: 30px;
+    left: 20px
 }
 
 /* - FIM HEADER */
