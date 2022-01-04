@@ -7,7 +7,7 @@ module.exports = (application) => {
         if (req.session.autenticado !== true) {
             res.render("admin.ejs")
         } else {
-            res.render("administrar.ejs")
+            res.render("administrar.ejs", { projetos: req.session.userId })
         }
     })
 
@@ -29,6 +29,6 @@ module.exports = (application) => {
         //destruir a sessão
         req.session.destroy()
             //redirecionar o usuário
-        res.render("admin.ejs")
+        res.redirect("/admin")
     })
 }

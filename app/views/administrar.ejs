@@ -14,38 +14,13 @@
 
     <!--Link das fontes utilizadas-->
     <script src="https://kit.fontawesome.com/11a0ae1d38.js" crossorigin="anonymous"></script>
+
+
+
     <title>Administrar - User</title>
-
-    <!-- Vamos criar um arquivo javascript e com ele vamos captar os dados do formulário de 'new project' e mandar para o backend-->
-    <script>
-        $(document).ready(function() {
-
-            var xhr = new XMLHttpRequest()
-
-
-            let formPostagem = document.getElementById('form-new-project')
-
-            formPostagem.onsubmit = async(e) => {
-
-                //criar form data
-                e.preventDefault();
-
-                let response = await fetch('http://localhost/admin/new-post', {
-                    method: 'POST',
-                    body: new FormData(formPostagem)
-                });
-
-                let result = await response.json();
-
-            }
-        })
-    </script>
-
 </head>
 
 <body>
-
-
     <form id="form-new-project" method="post" enctype="multipart/form-data" action="/admin/new-post">
         <legend>
             <h1>Adicionar Projeto</h1>
@@ -59,6 +34,47 @@
 
     <button><a href="/admin/sair ">Sair</a></button>
 
+    <!-- Esta parte em baixo será criada automaticamente para apresentar os projetos ao usuário que entrar como  link do 
+     profissional-->
+
+    <div id="projetos">
+        <!-- Vamos criar um input para recuperar o valor do id do usuário e poder pegar no script-->
+        <input id="userId" type="hidden" value="<%=projetos %>">
+        <!-- Aqui será adicionadas as imagens que estão no Banco de dados-->
+    </div>
+
+    <!-- Vamos criar um arquivo javascript e com ele vamos captar os dados do formulário de 'new project' e mandar para o backend-->
+    <script>
+        function exibirProjetos() {
+            const userId = document.getElementById("userId")
+        }
+        exibirProjetos()
+
+        //Fazer a requisição XMLhttprequest para trazer as informações que estão no servidor no banco de dados
+
+        const xhr = new XMLHttpRequest()
+
+        xhr.open("GET", "http://localhost/api/<%=projetos%>")
+        xhr.send()
+
+        xhr.onload = () => {
+
+            var urlImages = JSON.parse(xhr.response)
+            var imagens = document.getElementById("projetos")
+
+            //criando as imagens e mostrando na tela de administrador
+            var div = document.createElement('div')
+
+            for (let index = 0; index < urlImages.length; index++) {
+
+                div.innerHTML += "<img src='http://localhost/imagens/" + urlImages[index] + "'>"
+
+            }
+
+            imagens.appendChild(div)
+
+        }
+    </script>
 
 </body>
 

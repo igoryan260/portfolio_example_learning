@@ -43,7 +43,7 @@ module.exports.login = (req, res) => {
             }
 
             if (req.session.autenticado === true) {
-                res.render("administrar.ejs")
+                res.render("administrar.ejs", { projetos: req.session.userId })
             } else {
                 res.render("admin.ejs")
             }
@@ -124,7 +124,7 @@ module.exports.novaPostagem = (req, res) => {
             //agora vamos pegar a nova postagem e adicionar no documento de postagem juntamente com o id do usuario, da seguinte forma
 
             const newPost = {
-                userId: userId,
+                userId: req.session.userId,
                 tituloProjeto: req.body.tituloProjeto,
                 imagemCapaProjeto: req.file.path
             }
@@ -141,7 +141,7 @@ module.exports.novaPostagem = (req, res) => {
     }
 
     run().catch(console.dir)
-    res.render("administrar.ejs")
+    res.render("administrar.ejs", { projetos: {} })
 }
 
 module.exports.pegarPostagens = (req, res) => {
