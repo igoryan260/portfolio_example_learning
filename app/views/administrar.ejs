@@ -11,11 +11,12 @@
     <meta name="author" content="">
     <link rel="icon" href="">
     <!--<link rel="stylesheet" href="../public/css">-->
-
+    <link href="css/administrador.css" rel="stylesheet" type="text/css">
     <!--Link das fontes utilizadas-->
     <script src="https://kit.fontawesome.com/11a0ae1d38.js" crossorigin="anonymous"></script>
 
-
+    <script>
+    </script>
 
     <title>Administrar - User</title>
 </head>
@@ -32,7 +33,7 @@
         <input type="submit" value="Enviar projeto">
     </form>
 
-    <button><a href="/admin/sair ">Sair</a></button>
+    <button><a href="/admin/sair">Sair</a></button>
 
     <!-- Esta parte em baixo será criada automaticamente para apresentar os projetos ao usuário que entrar como  link do 
      profissional-->
@@ -45,12 +46,12 @@
 
     <!-- Vamos criar um arquivo javascript e com ele vamos captar os dados do formulário de 'new project' e mandar para o backend-->
     <script>
+        //Fazer a requisição XMLhttprequest para trazer as informações que estão no servidor no banco de dados
+
         function exibirProjetos() {
             const userId = document.getElementById("userId")
         }
         exibirProjetos()
-
-        //Fazer a requisição XMLhttprequest para trazer as informações que estão no servidor no banco de dados
 
         const xhr = new XMLHttpRequest()
 
@@ -64,17 +65,28 @@
 
             //criando as imagens e mostrando na tela de administrador
             var div = document.createElement('div')
+            div.class = "projetos"
 
             for (let index = 0; index < urlImages.length; index++) {
 
-                div.innerHTML += "<img src='http://localhost/imagens/" + urlImages[index] + "'>"
+                divConteudo = document.createElement("div")
+                divConteudo.id = urlImages[index].idPost
+
+                divConteudo.innerHTML = "<span class='titulo-projeto'>" + urlImages[index].titulo + "</span>"
+                divConteudo.innerHTML += "<img src='http://localhost/imagens/" + urlImages[index].url + "'>"
+                divConteudo.innerHTML += "<button>X</button>"
+
+                imagens.appendChild(divConteudo)
 
             }
 
             imagens.appendChild(div)
 
+
         }
     </script>
+
+
 
 </body>
 

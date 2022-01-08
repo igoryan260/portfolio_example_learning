@@ -43,7 +43,7 @@ module.exports.login = (req, res) => {
             }
 
             if (req.session.autenticado === true) {
-                res.render("administrar.ejs", { projetos: req.session.userId })
+                res.redirect("/admin")
             } else {
                 res.render("admin.ejs")
             }

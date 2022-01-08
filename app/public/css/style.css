@@ -1,6 +1,6 @@
-*{
+* {
     padding: 0;
-    margin: 0;   
+    margin: 0;
 }
 
 @font-face {
@@ -19,10 +19,10 @@ body {
     background-image: url(../image/images/bg-designer.jpg);
     background-size: 30%;
     background-repeat: no-repeat;
-    background-position:center top;
+    background-position: center top;
 }
 
-#grid{
+#grid {
     display: grid;
     grid-template-rows: auto 78vh auto;
 }
@@ -37,7 +37,8 @@ ul {
     list-style: none;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: "Bebas Neue";
 }
 
@@ -47,10 +48,12 @@ h3 {
     font-size: 1.4rem;
     margin-left: 10px;
 }
+
 hgroup {
     margin-top: 10px;
 }
-hgroup h1{
+
+hgroup h1 {
     color: white;
     font-size: 5rem;
     margin-left: 10px;
@@ -62,6 +65,7 @@ hgroup h2 {
     margin-left: 40px;
     font-size: 1.3rem;
 }
+
 
 /* - INÍCIO HEADER */
 
@@ -75,19 +79,18 @@ hgroup h2 {
     align-items: center;
 }
 
-#nav-info-perfil{
+#nav-info-perfil {
     display: flex;
     align-items: center;
 }
 
-#nav-info-perfil a{
+#nav-info-perfil a {
     padding-right: 10px;
     font-size: 2.5rem;
     height: 70px;
 }
 
-
-#imagem-perfil{
+#imagem-perfil {
     height: 70px;
     width: 70px;
     border-radius: 100%;
@@ -97,24 +100,30 @@ hgroup h2 {
     border-left: 2px solid white;
 }
 
-#menu-desktop{
+#menu-desktop {
     display: flex;
     align-items: baseline;
 }
 
-#subMenu-hamburguer{
+#subMenu-hamburguer {
     margin-top: 20px;
 }
 
-#subMenu-contatos, #subMenu-configuracoes, #subMenu-hamburguer{
+#subMenu-contatos,
+#subMenu-configuracoes,
+#subMenu-hamburguer {
     display: none;
 }
 
-.subMenu-contatos, .subMenu-configuracoes, .subMenu-hamburguer{
+.subMenu-contatos,
+.subMenu-configuracoes,
+.subMenu-hamburguer {
     display: none;
 }
 
-.mostrar-subMenu-contatos, .mostrar-subMenu-configuracoes, .mostrar-subMenu-hamburguer{
+.mostrar-subMenu-contatos,
+.mostrar-subMenu-configuracoes,
+.mostrar-subMenu-hamburguer {
     display: flex !important;
     position: fixed;
     flex-direction: column;
@@ -127,7 +136,9 @@ hgroup h2 {
     gap: 8px;
 }
 
-.esconder-subMenu-contatos, .esconder-subMenu-configuracoes, .esconder-subMenu-hamburguer{
+.esconder-subMenu-contatos,
+.esconder-subMenu-configuracoes,
+.esconder-subMenu-hamburguer {
     display: flex !important;
     position: fixed;
     flex-direction: column;
@@ -142,51 +153,55 @@ hgroup h2 {
     transition-delay: .5s;
 }
 
-.esconder-subMenu-contatos li a, .esconder-subMenu-configuracoes li a, .esconder-subMenu-hamburguer li a{
-    color:#151515;
+.esconder-subMenu-contatos li a,
+.esconder-subMenu-configuracoes li a,
+.esconder-subMenu-hamburguer li a {
+    color: #151515;
     transition-duration: .5s;
     transition-delay: .5s;
 }
 
-#subMenu-contatos a:hover, #subMenu-configuracoes a:hover, #subMenu-hamburguer a:hover{
+#subMenu-contatos a:hover,
+#subMenu-configuracoes a:hover,
+#subMenu-hamburguer a:hover {
     color: #e7c282;
 }
 
-.itens-menu{
+.itens-menu {
     font-size: 30px;
     color: white;
     margin-left: 30px;
 }
 
-
-#menu-hamburguer div{
+#menu-hamburguer div {
     border-top: 2px solid white;
     margin-top: 10px;
     margin-left: 30px;
     position: relative;
-    
 }
 
-#primeira-barra{
+#primeira-barra {
     width: 55px;
     right: 5px;
 }
 
-#segunda-barra{
+#segunda-barra {
     width: 40px;
     left: 10px;
 }
 
-#terceira-barra{
+#terceira-barra {
     width: 30px;
     left: 20px
 }
 
+
 /* - FIM HEADER */
+
 
 /* - INÍCIO MAIN */
 
-main h3{
+main h3 {
     margin-top: 50px;
     margin-bottom: 10px;
 }
@@ -210,25 +225,27 @@ article p {
     text-align: center;
 }
 
+
 /* - FIM MAIN */
 
-footer{
+footer {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
 }
 
-footer h2{
+footer h2 {
     color: #e7c282;
     font-size: 1.2rem;
     margin-left: 15px;
 }
 
-#copyright{
+#projetos img {
+    width: 150px;
+    height: 150px;
+}
+
+#copyright {
     color: white;
     font-size: 1.4rem;
 }
-
-
-
-

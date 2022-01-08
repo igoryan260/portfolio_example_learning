@@ -23,24 +23,23 @@ application.get("/api/:userId", function(req, res) {
             const find = await collection.find({ userId: req.params.userId }).toArray()
 
             var result = find.map(function(origem) {
-                return origem.imagemCapaProjeto
+                return { titulo: origem.tituloProjeto, urlImagem: origem.imagemCapaProjeto, id: origem._id.toHexString() }
             })
 
             var url = Array()
 
             result.forEach((url_image, x, y) => {
-                var resultado = url_image.substr(60, url_image.length)
+
+                var resultado = { titulo: url_image.titulo, url: url_image.urlImagem.substr(60, url_image.length), idPost: url_image.id }
 
                 url.push(resultado)
 
+                console.log(url)
             });
 
             res.json(
                 url
             )
-
-
-
         } finally {
             await client.close()
         }
@@ -54,7 +53,7 @@ application.get("/imagens/:imagem", function(req, res) {
 
     fs.readFile('./tmp/uploads/' + img, function(err, content) {
         if (err) {
-            res.satus(400).json(err)
+            res.status(400).json(err)
             return;
         }
 
