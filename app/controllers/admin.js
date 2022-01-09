@@ -135,13 +135,16 @@ module.exports.novaPostagem = (req, res) => {
             //inserindo novo documento na base de dados
             await collectionProjects.insertOne(newPost)
 
+
+
         } finally {
             await client.close()
         }
     }
 
     run().catch(console.dir)
-    res.render("administrar.ejs", { projetos: {} })
+        //após a inserção do projeto, redirecionar para a página inicial do administrador
+    res.redirect("/admin")
 }
 
 module.exports.pegarPostagens = (req, res) => {
