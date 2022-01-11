@@ -49,40 +49,60 @@
         //Fazer a requisição XMLhttprequest para trazer as informações que estão no servidor no banco de dados
 
         function exibirProjetos() {
-            const userId = document.getElementById("userId")
+            var userId = document.getElementById("userId")
+
+            const xhr = new XMLHttpRequest()
+
+            xhr.open("GET", "http://localhost/api/<%=projetos%>")
+            xhr.send()
+
+            xhr.onload = () => {
+
+                var urlImages = JSON.parse(xhr.response)
+                var imagens = document.getElementById("projetos")
+
+                //criando as imagens e mostrando na tela de administrador
+                var div = document.createElement('div')
+                div.class = "projetos"
+
+                for (let index = 0; index < urlImages.length; index++) {
+
+                    divConteudo = document.createElement("div")
+                    divConteudo.id = urlImages[index].idPost
+
+                    divConteudo.innerHTML = "<span class='titulo-projeto'>" + urlImages[index].titulo + "</span>"
+                    divConteudo.innerHTML += "<img src='http://localhost/imagens/" + urlImages[index].url + "'>"
+
+                    //neste botão abaixo vamos pegar o valor contido no id da div e excluir o projeto selecionado pelo usuário
+                    //chamando a função que requisitará o servidor através do XMLhttprequest             
+                    var btn = document.createElement("button")
+                    btn.innerHTML = "X"
+
+                    btn.addEventListener("click", function() {
+                        excluirProjeto(urlImages[index].idPost)
+                    })
+                    divConteudo.appendChild(btn)
+
+                    imagens.appendChild(divConteudo)
+                }
+                imagens.appendChild(div)
+            }
+
         }
         exibirProjetos()
 
-        const xhr = new XMLHttpRequest()
 
-        xhr.open("GET", "http://localhost/api/<%=projetos%>")
-        xhr.send()
 
-        xhr.onload = () => {
+        function excluirProjeto(idImagem) {
 
-            var urlImages = JSON.parse(xhr.response)
-            var imagens = document.getElementById("projetos")
+            //nesta função vamoos utilizar o XMLhttprequest para excluir uma imagem do portfolio ou o projeto em si
+            var xhr = new XMLHttpRequest()
+            xhr.open("GET", "http://localhost/excluirImagem/" + idImagem)
+            xhr.send()
 
-            //criando as imagens e mostrando na tela de administrador
-            var div = document.createElement('div')
-            div.class = "projetos"
-
-            for (let index = 0; index < urlImages.length; index++) {
-
-                divConteudo = document.createElement("div")
-                divConteudo.id = urlImages[index].idPost
-
-                divConteudo.innerHTML = "<span class='titulo-projeto'>" + urlImages[index].titulo + "</span>"
-                divConteudo.innerHTML += "<img src='http://localhost/imagens/" + urlImages[index].url + "'>"
-                divConteudo.innerHTML += "<button>X</button>"
-
-                imagens.appendChild(divConteudo)
-
+            xhr.onload = () => {
+                window.location.href = "http://localhost/admin"
             }
-
-            imagens.appendChild(div)
-
-
         }
     </script>
 

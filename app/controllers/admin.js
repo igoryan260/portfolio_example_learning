@@ -90,7 +90,7 @@ module.exports.register = (req, res) => {
         } finally {
             //encerrando conexão após o uso para a segurança do sistema
             await client.close()
-            res.render("admin.ejs")
+            res.redirect("/admin")
             console.log("Conexão encerrada")
         }
     }
@@ -119,10 +119,7 @@ module.exports.novaPostagem = (req, res) => {
             const resultSearch = await collectionSearch.findOne(userSearch)
                 //converter de ObjectId para string normal
             const userId = resultSearch._id.toHexString()
-
-
-            //agora vamos pegar a nova postagem e adicionar no documento de postagem juntamente com o id do usuario, da seguinte forma
-
+                //agora vamos pegar a nova postagem e adicionar no documento de postagem juntamente com o id do usuario, da seguinte forma
             const newPost = {
                 userId: req.session.userId,
                 tituloProjeto: req.body.tituloProjeto,
@@ -135,37 +132,13 @@ module.exports.novaPostagem = (req, res) => {
             //inserindo novo documento na base de dados
             await collectionProjects.insertOne(newPost)
 
-
-
         } finally {
             await client.close()
         }
+        res.redirect("/admin")
     }
 
     run().catch(console.dir)
-        //após a inserção do projeto, redirecionar para a página inicial do administrador
-    res.redirect("/admin")
-}
 
-module.exports.pegarPostagens = (req, res) => {
-    async function run() {
-        try {
 
-            await client.connect()
-
-            const bd = client.db("portfolio_example")
-            const collection = bd.collection("projects")
-
-            const result = await collection.find({ userId: "61c732c237b40a199293a9b7" }).toArray()
-
-            console.log(result)
-
-        } finally {
-            await client.close()
-        }
-
-        res.send("Pronto")
-    }
-
-    run().catch(console.dir)
 }

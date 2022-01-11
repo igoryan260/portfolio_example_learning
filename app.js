@@ -34,7 +34,6 @@ application.get("/api/:userId", function(req, res) {
 
                 url.push(resultado)
 
-                console.log(url)
             });
 
             res.json(
@@ -60,4 +59,30 @@ application.get("/imagens/:imagem", function(req, res) {
         res.writeHead(200, { 'content-type': 'image' })
         res.end(content)
     })
+})
+
+application.get("/excluirImagem/:imagem", function(req, res) {
+
+    async function run() {
+        var client = new MongoClient("mongodb://localhost:27017")
+
+        try {
+
+            await client.connect()
+
+            var db = client.db("portfolio_example")
+            var collection = db.collection("projects")
+
+            let idImagemProjeto = new ObjectID(req.params.imagem)
+
+            await collection.deleteOne({ "_id": idImagemProjeto })
+        } finally {
+            await client.close()
+        }
+
+        res.redirect("/admin")
+    }
+
+    run().catch(console.dir)
+
 })
