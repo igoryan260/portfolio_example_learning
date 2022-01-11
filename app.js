@@ -47,6 +47,7 @@ application.get("/api/:userId", function(req, res) {
     run().catch(console.dir)
 })
 
+//ler imagens para mostrar na tela do cliente
 application.get("/imagens/:imagem", function(req, res) {
     var img = req.params.imagem
 
@@ -61,7 +62,15 @@ application.get("/imagens/:imagem", function(req, res) {
     })
 })
 
-application.get("/excluirImagem/:imagem", function(req, res) {
+//excluir imagem do servidor e do cliente
+application.get("/excluirImagem/:imagem/:urlImagem", function(req, res) {
+
+    var imagemExcluir = req.params.urlImagem
+    console.log(imagemExcluir)
+    fs.unlink("./tmp/uploads/" + imagemExcluir, (err) => {
+        if (err) throw err;
+        console.log("Imagem excluida do servidor com sucesso")
+    })
 
     async function run() {
         var client = new MongoClient("mongodb://localhost:27017")

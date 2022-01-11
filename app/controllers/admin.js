@@ -39,7 +39,7 @@ module.exports.login = (req, res) => {
                 }
             } else {
                 //caso não tenha retornado nada na variável "result", a aplicação retornará na página 'admin' com o erro
-                res.send("Usuário não encontrado")
+                res.render("admin.ejs", { "validacao": "Usuário não encontrado" })
             }
 
             if (req.session.autenticado === true) {
@@ -108,18 +108,7 @@ module.exports.novaPostagem = (req, res) => {
             //conectando à base de dados do portfolio exemplo
             const database = client.db("portfolio_example")
 
-            //nestas primeiras linhas de código, eu preciso pegar o objectId do usuario logado e após isso inserir esta referência no documento de postagens
-            //no caso, cada postagem vai ter o código do objectId do usuário autenticado para refernciar o dono da postagem
-
-            //collection dos usuários
-            const collectionSearch = database.collection("admin")
-            const userSearch = { administrador: "Igor" }
-
-            //resultado da busca pelo usuário
-            const resultSearch = await collectionSearch.findOne(userSearch)
-                //converter de ObjectId para string normal
-            const userId = resultSearch._id.toHexString()
-                //agora vamos pegar a nova postagem e adicionar no documento de postagem juntamente com o id do usuario, da seguinte forma
+            //agora vamos pegar a nova postagem e adicionar no documento de postagem juntamente com o id do usuario, da seguinte forma
             const newPost = {
                 userId: req.session.userId,
                 tituloProjeto: req.body.tituloProjeto,

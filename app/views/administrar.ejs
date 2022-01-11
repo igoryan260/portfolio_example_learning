@@ -79,7 +79,7 @@
                     btn.innerHTML = "X"
 
                     btn.addEventListener("click", function() {
-                        excluirProjeto(urlImages[index].idPost)
+                        excluirProjeto(urlImages[index].idPost, urlImages[index].url)
                     })
                     divConteudo.appendChild(btn)
 
@@ -93,11 +93,11 @@
 
 
 
-        function excluirProjeto(idImagem) {
+        function excluirProjeto(idImagem, urlImagem) {
 
             //nesta função vamoos utilizar o XMLhttprequest para excluir uma imagem do portfolio ou o projeto em si
             var xhr = new XMLHttpRequest()
-            xhr.open("GET", "http://localhost/excluirImagem/" + idImagem)
+            xhr.open("GET", "http://localhost/excluirImagem/" + idImagem + "/" + urlImagem)
             xhr.send()
 
             xhr.onload = () => {
