@@ -5,7 +5,7 @@ const app = require("../../config/server.js")
 module.exports = (application) => {
     application.get("/admin", (req, res) => {
         if (req.session.autenticado !== true) {
-            res.render("admin.ejs", { "validacao": "" })
+            res.render("admin.ejs", { "validacao": req.session.validacaoUser })
         } else {
             res.render("administrar.ejs", { projetos: req.session.userId })
         }

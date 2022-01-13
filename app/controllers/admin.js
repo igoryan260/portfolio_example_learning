@@ -26,28 +26,30 @@ module.exports.login = (req, res) => {
 
             // conexão estabelecida
             // a variavel abaixo se transformará num array contendo as informações retiradas do banco de dados
-            const result = await colecao.find({ administrador: req.body.nomeLogin, senha: { $eq: req.body.senhaLogin } }).toArray()
+            const result = await colecao.find({
+                nomeUsuario: req.body.nomeUsuarioLogin,
+                senha: { $eq: req.body.senhaLogin }
+            }).toArray()
 
             //o codigo abaixo irá verificar o resultado que é um array, e logo pegará seu primeiro índice e comparar com a informação digitada no formulário
             if (result[0]) {
-
-                if (result[0].administrador === req.body.nomeLogin) {
+                if (result[0].nomeUsuario === req.body.nomeUsuarioLogin) {
                     //agora vamos criar uma sessão, caso o usuário tiver sido autenticado ele pode criar a sessão que só será destruida caso ele mesmo queira sair
                     req.session.autenticado = true
                         //criando a sessão onde o objectId do usuário possa ser recuperado em qualquer página do servidor
                     req.session.userId = result[0]._id.toHexString()
                 }
             } else {
-                //caso não tenha retornado nada na variável "result", a aplicação retornará na página 'admin' com o erro
-                res.render("admin.ejs", { "validacao": "Usuário não encontrado" })
+                console.log("Não Achamos resultado")
+                    //caso não tenha retornado nada na variável "result", a aplicação retornará na página 'admin' com o erro
+                req.session.validacaoUser = "usuário não encontrado"
+                res.redirect("/admin")
+
             }
 
             if (req.session.autenticado === true) {
                 res.redirect("/admin")
-            } else {
-                res.render("admin.ejs")
             }
-
             console.log("Connected successfully to server");
         } finally {
             // Ensures that the client will close when you finish/error
@@ -82,9 +84,31 @@ module.exports.register = (req, res) => {
             const database = client.db("portfolio_example")
             const collection = database.collection("admin")
 
-            const doc = { administrador: req.body.adminRegister, senha: req.body.senhaRegister }
+            const doc = {
+                administrador: req.body.adminRegister,
+                senha: req.body.senhaRegister,
+                nomeUsuario: req.body.nomeUsuarioRegister,
+                email: req.body.email,
+                telefone: req.body.telefone,
+                whatsapp: req.body.whatsapp,
+                sobreMim: req.body.sobreMim,
+                servicosPrestados: req.body.servicos
+            }
 
-            await collection.insertOne(doc)
+            const result = await collection.findOne({
+                nomeUsuario: req.body.nomeUsuarioRegister
+            })
+
+            //se resultado for vazio (ele não existir) podemos inserir o novo usuário, se existir manda erro pro usuário
+            if (!result) {
+                console.log("vamos inseri-lo")
+                    //await collection.insertOne(doc)
+            } else {
+                console.log("Não vammos inseri-lo")
+                req.session.validacaoUser = "Nome de usuário já existe"
+                res.redirect("/admin")
+            }
+
             console.log("Documento inserido")
 
         } finally {
