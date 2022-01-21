@@ -1,4 +1,7 @@
-module.exports.homepage = (application, req, res) => {
-    //res.send("Olá, vendo se funciona a rota informada home page")
-    res.render("index.ejs", { infoDesigne: req.session })
+module.exports.homepage = (req, res) => {
+    if (!req.session.visitanteAutenticado) {
+        res.redirect("/admin")
+    } else {
+        res.render("index.ejs", { infoDesigne: {} })
+    }
 }

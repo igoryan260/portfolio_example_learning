@@ -22,110 +22,108 @@
 
 <body>
 
-    <!-- iniciando o if do EJS -->
-    <%if(infoDesigne){%>
 
-        <div id="grid">
-            <header>
-                <nav id="nav-principal">
-                    <nav id="nav-info-perfil">
-                        <a href="#"><img src="image/images/perfil.jpg" alt="" id="imagem-perfil"></a>
-                        <a href="#"><span class="caveat"><%=infoDesigne.nome%></span></a>
-                    </nav>
+    <div id="grid">
+        <header>
+            <nav id="nav-principal">
+                <nav id="nav-info-perfil">
+                    <a href="#"><img src="image/images/perfil.jpg" alt="" id="imagem-perfil"></a>
+                    <a href="#"><span class="caveat"><%=infoDesigne.nome%></span></a>
+                </nav>
 
-                    <nav id="nav-menu-desktop">
-                        <ul id="menu-desktop">
-                            <li>
-                                <span id="contatos" class="itens-menu" onmouseover="mostrarContatos(); esconderHamburguer(); esconderConfiguracoes()" onmouseout="timeContatos()"><i class="far fa-comments"></i></span>
-                                <ul id="subMenu-contatos" onmouseover="mostrarContatos()" onmouseout="esconderContatos()">
-                                    <li><a href="tel:+55<%=infoDesigne.whatsapp%>">Whatsapp</li>
+                <nav id="nav-menu-desktop">
+                    <ul id="menu-desktop">
+                        <li>
+                            <span id="contatos" class="itens-menu" onmouseover="mostrarContatos(); esconderHamburguer(); esconderConfiguracoes()" onmouseout="timeContatos()"><i class="far fa-comments"></i></span>
+                            <ul id="subMenu-contatos" onmouseover="mostrarContatos()" onmouseout="esconderContatos()">
+                                <li><a href="tel:+55<%=infoDesigne.whatsapp%>">Whatsapp</li>
                                     <li><a href="mailto:<%=infoDesigne.email%>">E-mail</a></li>
-                                    <li><a href="tel:+55<%=infoDesigne.telefone%>">Telefone</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span id="configuracoes" class="itens-menu" onmouseover="mostrarConfiguracoes(); esconderHamburguer(); esconderContatos()" onmouseout="timeConfiguracoes()"><i class="fas fa-cog"></i></span>
-                                <ul id="subMenu-configuracoes" onmouseover="mostrarConfiguracoes()" onmouseout="esconderConfiguracoes()">
-                                    <li><a href="#">Tema claro</a></li>
-                                    <li><a href="#">Tema Escuro</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <div id="menu-hamburguer" onmouseover="mostrarHamburguer(); esconderContatos(); esconderConfiguracoes()" onmouseout="timeHamburguer()">
-                                    <div id="primeira-barra"></div>
-                                    <div id="segunda-barra"></div>
-                                    <div id="terceira-barra"></div>
-                                </div>
-                                <!-- Criar rota para abrir página de serviços-->
-                                <ul id="subMenu-hamburguer" onmouseover="mostrarHamburguer()" onmouseout="esconderHamburguer()">
-
-                                    <li><a href="#">Sobre mim</a></li>
-                                    <li><a href="#">Serviços</a></li>
-                                    <li><a href="http://localhost/cliente/sair">Sair</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <!-- Preciso criar uma rota para renderizar a página de serviços-->
-                    <nav id="nav-menu-mobile">
-                        <span>Menu</span>
-                        <ul>
-                            <li><a href="#">Sobre mim</a></li>
-                            <li><a href="#">Contatos</a></li>
-                            <ul>
-                                <li><a href="#">Whatsapp</a></li>
-                                <li><a href="#">E-mail</a></li>
-                                <li><a href="#">Telefone</a></li>
+                                <li><a href="tel:+55<%=infoDesigne.telefone%>">Telefone</a></li>
                             </ul>
-                            <li><a href="#">Serviços</a></li>
-                            <ul>
+                        </li>
+                        <li>
+                            <span id="configuracoes" class="itens-menu" onmouseover="mostrarConfiguracoes(); esconderHamburguer(); esconderContatos()" onmouseout="timeConfiguracoes()"><i class="fas fa-cog"></i></span>
+                            <ul id="subMenu-configuracoes" onmouseover="mostrarConfiguracoes()" onmouseout="esconderConfiguracoes()">
                                 <li><a href="#">Tema claro</a></li>
                                 <li><a href="#">Tema Escuro</a></li>
                             </ul>
-                        </ul>
-                    </nav>
+                        </li>
+                        <li>
+                            <div id="menu-hamburguer" onmouseover="mostrarHamburguer(); esconderContatos(); esconderConfiguracoes()" onmouseout="timeHamburguer()">
+                                <div id="primeira-barra"></div>
+                                <div id="segunda-barra"></div>
+                                <div id="terceira-barra"></div>
+                            </div>
+                            <!-- Criar rota para abrir página de serviços-->
+                            <ul id="subMenu-hamburguer" onmouseover="mostrarHamburguer()" onmouseout="esconderHamburguer()">
+
+                                <li><a href="#">Sobre mim</a></li>
+                                <li><a href="#">Serviços</a></li>
+                                <li><a href="/visitante/sair">Sair</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </nav>
-            </header>
-            <main>
-                <hgroup>
-                    <h1>Saudações!</h1>
-                    <h2>Espero que goste dos projetos, e que eu possa realizar essa grande etapa de sua vida.</h2>
-                </hgroup>
 
-                <h3>Últimos Projetos</h3>
-                <section>
-                    <article>
-                        <img src="image/images/exemplo-projeto.jpg" alt="">
-                        <p>
-                            Projeto 1
-                        </p>
-                    </article>
+                <!-- Preciso criar uma rota para renderizar a página de serviços-->
+                <nav id="nav-menu-mobile">
+                    <span>Menu</span>
+                    <ul>
+                        <li><a href="#">Sobre mim</a></li>
+                        <li><a href="#">Contatos</a></li>
+                        <ul>
+                            <li><a href="#">Whatsapp</a></li>
+                            <li><a href="#">E-mail</a></li>
+                            <li><a href="#">Telefone</a></li>
+                        </ul>
+                        <li><a href="#">Serviços</a></li>
+                        <ul>
+                            <li><a href="#">Tema claro</a></li>
+                            <li><a href="#">Tema Escuro</a></li>
+                        </ul>
+                    </ul>
+                </nav>
+            </nav>
+        </header>
+        <main>
+            <hgroup>
+                <h1>Saudações!</h1>
+                <h2>Espero que goste dos projetos, e que eu possa realizar essa grande etapa de sua vida.</h2>
+            </hgroup>
 
-                    <article>
-                        <img src="image/images/exemplo-projeto.jpg" alt="">
-                        <p>
-                            Projeto 2
-                        </p>
-                    </article>
+            <h3>Últimos Projetos</h3>
+            <section>
+                <article>
+                    <img src="image/images/exemplo-projeto.jpg" alt="">
+                    <p>
+                        Projeto 1
+                    </p>
+                </article>
 
-                    <article>
-                        <img src="image/images/exemplo-projeto.jpg" alt="">
-                        <p>
-                            Projeto 3
-                        </p>
-                    </article>
-                </section>
-            </main>
-            <footer>
-                <span id="copyright">&copy;</span>
-                <h2>Desenvolvido por Roberto - 2021</h2>
-            </footer>
+                <article>
+                    <img src="image/images/exemplo-projeto.jpg" alt="">
+                    <p>
+                        Projeto 2
+                    </p>
+                </article>
 
-            <!-- finalizando o if do EJS -->
-            <%}%>
-                <script src="js/script.js"></script>
-        </div>
+                <article>
+                    <img src="image/images/exemplo-projeto.jpg" alt="">
+                    <p>
+                        Projeto 3
+                    </p>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <span id="copyright">&copy;</span>
+            <h2>Desenvolvido por
+                <%=infoDesigne.nome%>
+            </h2>
+        </footer>
+
+        <script src="js/script.js"></script>
+    </div>
 </body>
 
 </html>

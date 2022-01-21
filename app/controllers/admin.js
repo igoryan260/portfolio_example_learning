@@ -102,7 +102,7 @@ module.exports.register = (req, res) => {
             //se resultado for vazio (ele não existir) podemos inserir o novo usuário, se existir manda erro pro usuário
             if (!result) {
                 console.log("vamos inseri-lo")
-                    //await collection.insertOne(doc)
+                await collection.insertOne(doc)
             } else {
                 console.log("Não vammos inseri-lo")
                 req.session.validacaoUser = "Nome de usuário já existe"

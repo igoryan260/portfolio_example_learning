@@ -32,7 +32,7 @@
 
 
             <!--Este formulário abaixo serve para fazer o login-->
-            <form action="/admin/login" method="post" id="form-login">
+            <form action="admin/login" method="post" id="form-login">
                 <label for="admin">Nome de usuario</label>
                 <input type="text" name="nomeUsuarioLogin" id="admin">
 
@@ -76,12 +76,18 @@
                 <input type="submit" value="Inscrever">
             </form>
 
-            <div>
-                <footer>
-                    <span id="copyright">&copy;</span>
-                    <h2>Desenvolvido por Roberto - 2021</h2>
-                </footer>
-            </div>
+            <!-- Este outro fomulário é pra visitantes, pra colocar o nome de usuário do Designe desejado-->
+            <p>
+                Sou visitante
+            </p>
+
+            <br />
+
+            <form action="visitante" method="post" id="form-visitante">
+                <label for="nomeUsuarioDesigne">Nome de usuário do designer:</label>
+                <input type="text" name="nomeUsuario" id="nomeUsuarioDesigne">
+                <input type="submit" value="Visitar">
+            </form>
 
 </body>
 
