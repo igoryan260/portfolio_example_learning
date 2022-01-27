@@ -25,16 +25,18 @@ application.get("/api/:userId", function(req, res) {
             var result = find.map(function(origem) {
                 return { titulo: origem.tituloProjeto, urlImagem: origem.imagemCapaProjeto, id: origem._id.toHexString() }
             })
-
+            
             var url = Array()
 
             result.forEach((url_image, x, y) => {
 
-                var resultado = { titulo: url_image.titulo, url: url_image.urlImagem.substr(60, url_image.length), idPost: url_image.id }
-
+                var resultado = { titulo: url_image.titulo, url: url_image.urlImagem.substr(73, url_image.length), idPost: url_image.id }
+                
                 url.push(resultado)
 
+                console.log(resultado)
             });
+
 
             res.json(
                 url

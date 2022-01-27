@@ -249,3 +249,53 @@ footer h2 {
     color: white;
     font-size: 1.4rem;
 }
+
+@media (min-width: 576px) and (max-width: 850px){
+    #nav-principal{
+        display: none;
+    }
+
+    #itens-menu-mobile{
+        display: none;
+    }
+
+    #nav-menu-mobile{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #nav-menu-mobile img{
+        margin-top: 10px;
+    }
+
+    .nome-perfil {
+        font-size: 1.8rem;
+    }
+
+}
+
+@media (max-width: 576px){
+    #nav-principal{
+        display: none;
+    }
+
+    #itens-menu-mobile{
+        display: none;
+    }
+
+    #nav-menu-mobile{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #nav-menu-mobile img{
+        margin-top: 10px;
+    }
+
+    .nome-perfil {
+        font-size: 1.3rem;
+    }
+
+}
