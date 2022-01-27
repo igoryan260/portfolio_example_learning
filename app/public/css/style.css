@@ -250,32 +250,21 @@ footer h2 {
     font-size: 1.4rem;
 }
 
-@media (min-width: 576px) and (max-width: 850px){
-    #nav-principal{
-        display: none;
-    }
-
-    #itens-menu-mobile{
-        display: none;
-    }
-
-    #nav-menu-mobile{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    #nav-menu-mobile img{
-        margin-top: 10px;
-    }
-
-    .nome-perfil {
-        font-size: 1.8rem;
-    }
-
-}
 
 @media (max-width: 576px){
+    body{
+        margin: 30px;
+        background: #1c1c1c;
+        background-image: url(../image/images/bg-moon.jpg);
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: center top;  
+    }
+
+    #grid {
+        grid-template-rows: auto 70vh auto;
+    }
+
     #nav-principal{
         display: none;
     }
@@ -296,6 +285,165 @@ footer h2 {
 
     .nome-perfil {
         font-size: 1.3rem;
+    }
+
+    hgroup {
+        margin-left: 20px;
+    }
+    
+    hgroup h1 {
+        font-size: 2rem;
+    }
+    
+    hgroup h2 {
+        font-size: 1rem;
+    }
+
+    main h3 {
+        margin-left: 20px;
+    }
+
+    article img {
+        width: 120px;
+        height: 190px;
+        border-radius: 10px;
+    }
+    
+    article p {
+        font-size: 1.3rem;
+        width: 120px;
+    }
+
+    #imagem-perfil{
+        width: 70px;
+        height: 70px;
+    }
+
+    #menu-hamburguer div {
+        margin-top: 5px;
+    }
+    
+    #primeira-barra {
+        width: 35px;
+        left: 5px;
+    }
+    
+    #segunda-barra {
+        width: 25px;
+        left: 15px;
+    }
+    
+    #terceira-barra {
+        width: 15px;
+        left: 25px
+    }
+
+    footer h2{
+        font-size: 1rem;
+    }
+
+    #copyrigth{
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 850px){
+    body{
+        margin: 30px;
+        background: #1c1c1c;
+        background-image: url(../image/images/bg-moon.jpg);
+        background-size: 60%;
+        background-repeat: no-repeat;
+        background-position: center top;  
+    }
+    
+    #grid {
+        grid-template-rows: auto auto auto;
+    }
+    
+    #nav-principal{
+        display: none;
+    }
+
+    #itens-menu-mobile{
+        display: none;
+    }
+
+    #nav-menu-mobile{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #nav-menu-mobile img{
+        margin-top: 10px;
+    }
+
+    .nome-perfil {
+        font-size: 1.3rem;
+    }
+
+    hgroup {
+        margin-left: 20px;
+    }
+    
+    hgroup h1 {
+        font-size: 2rem;
+    }
+    
+    hgroup h2 {
+        font-size: 1rem;
+    }
+
+    main h3 {
+        margin-left: 20px;
+    }
+
+    article img {
+        width: 120px;
+        height: 190px;
+        border-radius: 10px;
+    }
+    
+    article p {
+        font-size: 1.3rem;
+        width: 120px;
+    }
+
+    #imagem-perfil{
+        width: 70px;
+        height: 70px;
+    }
+
+    #menu-hamburguer div {
+        margin-top: 5px;
+    }
+    
+    #primeira-barra {
+        width: 35px;
+        left: 5px;
+    }
+    
+    #segunda-barra {
+        width: 25px;
+        left: 15px;
+    }
+    
+    #terceira-barra {
+        width: 15px;
+        left: 25px
+    }
+
+    footer{
+        margin-top: 50px;
+    }
+
+    footer h2{
+        font-size: 1rem;
+    }
+
+    #copyrigth{
+        font-size: 1rem;
     }
 
 }
