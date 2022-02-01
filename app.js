@@ -6,6 +6,7 @@ const { ObjectID } = require("bson")
 const md5 = require("md5")
 const fs = require("fs")
 const res = require('express/lib/response')
+const { type } = require('express/lib/response')
 
 application.get("/api/:userId", function(req, res) {
     async function run() {
@@ -29,7 +30,6 @@ application.get("/api/:userId", function(req, res) {
             var url = Array()
 
             result.forEach((url_image, x, y) => {
-
                 //achamos um problema no momento de substtuir o caminho (url da imagem). Dependendo do local em que o projeto é hospedado pode dar um erro no caminho, logo vamos usar o lastIndexOf para localizar a ultima barra que separa o caminho e o nome da imagem.
                 let urlLastBar = url_image.urlImagem.lastIndexOf("uploads") + 8
 
@@ -53,7 +53,7 @@ application.get("/api/:userId", function(req, res) {
 application.get("/imagens/:imagem", function(req, res) {
     var img = req.params.imagem
 
-    fs.readFile('./tmp/uploads/' + img, function(err, content) {
+    fs.readFile('./app/public/image/tmp/uploads/' + img, function(err, content) {
         if (err) {
             res.status(400).json(err)
             return;
@@ -69,7 +69,7 @@ application.get("/excluirImagem/:imagem/:urlImagem", function(req, res) {
 
     var imagemExcluir = req.params.urlImagem
     console.log(imagemExcluir)
-    fs.unlink("./tmp/uploads/" + imagemExcluir, (err) => {
+    fs.unlink("./app/public/image/tmp/uploads/" + imagemExcluir, (err) => {
         if (err) throw err;
         console.log("Imagem excluida do servidor com sucesso")
     })
@@ -95,5 +95,4 @@ application.get("/excluirImagem/:imagem/:urlImagem", function(req, res) {
     }
 
     run().catch(console.dir)
-
 })

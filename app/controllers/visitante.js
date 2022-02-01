@@ -17,6 +17,26 @@ module.exports.visitar = (req, res) => {
 
             if (result) {
 
+                //vamos procurar todos os projetos do designer pesquisado e renderizar na página
+                const collection_projects = bd.collection("projects")
+                var resultProjects = await collection_projects.find({ "userId": result._id.toHexString() }).toArray()
+
+                //na variável abaixo vamos formatar as informações vindas do banco de dados
+                var resultFormated = resultProjects.map(function(elemento, x) {
+                    let jsonResult = {
+                        idProjeto: elemento._id.toHexString(),
+                        tituloImagem: elemento.tituloProjeto,
+                        url: elemento.imagemCapaProjeto.substr((elemento.imagemCapaProjeto.lastIndexOf("uploads") + 8), elemento.imagemCapaProjeto.length)
+                    }
+
+                    return jsonResult;
+                })
+
+                console.log(resultFormated)
+
+                //para captar também o endereço e titulos das imagens, vamos criar uma sessão diferente para ser mandado na variável 'projetos
+                req.session.resultFormated = resultFormated
+
                 //vamos criar uma sessão para autenticar o visitante, fazer o controle de renderização da página
                 req.session.visitanteAutenticado = true
                 req.session.nome = result.administrador
@@ -28,7 +48,8 @@ module.exports.visitar = (req, res) => {
                 req.session.sobreMim = result.sobreMim
                 req.session.servicosPrestados = result.servicosPrestados
 
-                res.render("index.ejs", { infoDesigne: req.session })
+                //res.render("index.ejs", { infoDesigne: req.session, projetos: req.session.resultFormated })
+                res.redirect("/")
             }
         } finally {
             await client.close()

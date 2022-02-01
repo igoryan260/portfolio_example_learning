@@ -92,27 +92,42 @@
             </hgroup>
 
             <h3>Últimos Projetos</h3>
-            <section>
-                <article>
-                    <img src="image/images/exemplo-projeto.jpg" alt="">
-                    <p>
-                        Projeto 1
-                    </p>
-                </article>
 
-                <article>
-                    <img src="image/images/exemplo-projeto.jpg" alt="">
-                    <p>
-                        Projeto 2
-                    </p>
-                </article>
+            <section id="ultimosProjetos">
+                <% for(let x = 0; x < projetos.length; x++){%>
+                    <article>
+                        <button onclick="expandirProjeto(this.value)" value="<%=projetos[x].url %>"><img src="image/tmp/uploads/<%=projetos[x].url %>" alt=""></button>
+                        <p>
+                            <%= projetos[x].tituloImagem %>
+                        </p>
+                    </article>
+                    <%}%>
+            </section>
 
-                <article>
-                    <img src="image/images/exemplo-projeto.jpg" alt="">
-                    <p>
-                        Projeto 3
-                    </p>
-                </article>
+            <h3>Todos os Projetos</h3>
+
+            <!--Seção para mostrar todos os projetos -->
+            <section id="todosProjetos">
+                <% for(let x = 0; x < projetos.length; x++){%>
+                    <article>
+                        <!-- Cada href desse abaixo levará para o arquivo routes, 
+                            expandirProjetos, que captará o nome do projeto e url 
+                            do mesmo e após isso renderizar na página de expandir o projeto ejs
+                        -->
+                        <!-- Quando clicar em cima da imagem desejada, automaticamente através do javascript aparecerá um modal, uma janela -->
+                        <button onclick="expandirProjeto(this.value)" value="<%=projetos[x].url %>"><img src="image/tmp/uploads/<%=projetos[x].url %>" alt=""></button>
+                        <p>
+                            <%= projetos[x].tituloImagem %>
+                        </p>
+                    </article>
+
+                    <!-- Neste span vamos abrir uma janela modal com o projeto em tamanho grande, real-->
+                    <span id="janela-modal-<%=projetos[x].url %>" class="d-esconder projeto-expandido">
+                        <img src="image/tmp/uploads/<%=projetos[x].url %>">
+                        <button onclick="esconderProjeto(this.value)" value="<%=projetos[x].url %>">Fechar</button>
+                    </span>
+
+                    <%}%>
             </section>
         </main>
         <footer>
@@ -121,6 +136,16 @@
                 <%=infoDesigne.nome%>
             </h2>
         </footer>
+
+        <script>
+            function expandirProjeto(nomeImagem) {
+                document.getElementById("janela-modal-" + nomeImagem).className = "d-mostrar projeto-expandido"
+            }
+
+            function esconderProjeto(nomeImagem) {
+                document.getElementById("janela-modal-" + nomeImagem).className = "d-esconder projeto-expandido"
+            }
+        </script>
 
         <script src="js/script.js"></script>
     </div>
