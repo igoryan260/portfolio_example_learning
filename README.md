@@ -6,7 +6,6 @@ https://github.com/igoryan260/portfolio_example_learning/blob/main/LICENSE
  Portfolio Exemplo Teste - é um projeto tanto para aprendizado das tecnologias que serão utilizadas e para aperfeiçoar o desenvolvimento profissional. Desde métodos de desenvolvimento até o projeto final totalmente funcional.
 
 O dono do portfolio poderá:
- - escolher temas que mais lhe agrada, que de início será apenas 2 &#40;dark e clear&#41;;
  - enviar seus projetos &#40; no caso suas artes &#41;;
  - terá acesso na página principal as suas últimas artes;
  - suas formas de entrar em contato;

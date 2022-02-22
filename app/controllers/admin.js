@@ -136,7 +136,8 @@ module.exports.novaPostagem = (req, res) => {
             const newPost = {
                 userId: req.session.userId,
                 tituloProjeto: req.body.tituloProjeto,
-                imagemCapaProjeto: req.file.path
+                imagensProjeto: req.file,
+                descricao: req.body.descricao
             }
 
             //criando a collection dos uploads dos projetos

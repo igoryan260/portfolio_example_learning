@@ -27,8 +27,8 @@
         <header>
             <nav id="nav-principal">
                 <nav id="nav-info-perfil">
-                    <a href="#"><img src="image/images/perfil.jpg" alt="" id="imagem-perfil"></a>
-                    <a href="#"><span class="caveat"><%=infoDesigne.nome%></span></a>
+                    <a href="/"><img src="image/images/perfil.jpg" alt="" id="imagem-perfil"></a>
+                    <a href="/"><span class="caveat"><%=infoDesigne.nome%></span></a>
                 </nav>
 
                 <nav id="nav-menu-desktop">
@@ -41,13 +41,16 @@
                                 <li><a href="tel:+55<%=infoDesigne.telefone%>">Telefone</a></li>
                             </ul>
                         </li>
-                        <li>
+                        <!--Por enquanto vamos ocultar, deixar para as próximas atualizações a opção de trocar o tema do site, tanto para mobile quanto para desktop
+                    
+                          <li>
                             <span id="configuracoes" class="itens-menu" onmouseover="mostrarConfiguracoes(); esconderHamburguer(); esconderContatos()" onmouseout="timeConfiguracoes()"><i class="fas fa-cog"></i></span>
                             <ul id="subMenu-configuracoes" onmouseover="mostrarConfiguracoes()" onmouseout="esconderConfiguracoes()">
                                 <li><a href="#">Tema claro</a></li>
                                 <li><a href="#">Tema Escuro</a></li>
                             </ul>
                         </li>
+                    -->
                         <li>
                             <div id="menu-hamburguer" onmouseover="mostrarHamburguer(); esconderContatos(); esconderConfiguracoes()" onmouseout="timeHamburguer()">
                                 <div id="primeira-barra"></div>
@@ -57,8 +60,8 @@
                             <!-- Criar rota para abrir página de serviços-->
                             <ul id="subMenu-hamburguer" onmouseover="mostrarHamburguer()" onmouseout="esconderHamburguer()">
 
-                                <li><a href="#">Sobre mim</a></li>
-                                <li><a href="#">Serviços</a></li>
+                                <li><a href="/visitante/sobreMim">Sobre mim</a></li>
+                                <li><a href="/visitante/servicos">Serviços</a></li>
                                 <li><a href="/visitante/sair">Sair</a></li>
                             </ul>
                         </li>
@@ -77,10 +80,10 @@
                             <li><a href="#">Telefone</a></li>
                         </ul>
                         <li><a href="#">Serviços</a></li>
-                        <ul>
+                        <!--<ul>
                             <li><a href="#">Tema claro</a></li>
                             <li><a href="#">Tema Escuro</a></li>
-                        </ul>
+                        </ul>-->
                     </ul>
                 </nav>
             </nav>
@@ -94,11 +97,11 @@
             <h3>Últimos Projetos</h3>
 
             <section id="ultimosProjetos">
-                <% for(let x = 0; x < projetos.length; x++){%>
+                <% for(let x = 0; x < 3; x++){%>
                     <article>
-                        <button onclick="expandirProjeto(this.value)" value="<%=projetos[x].url %>"><img src="image/tmp/uploads/<%=projetos[x].url %>" alt=""></button>
+                        <button onclick="expandirProjeto(this.value)" value="<%=ultimosProjetos[x].url %>"><img src="image/tmp/uploads/<%=ultimosProjetos[x].url %>" alt=""></button>
                         <p>
-                            <%= projetos[x].tituloImagem %>
+                            <%=ultimosProjetos[x].tituloImagem%>
                         </p>
                     </article>
                     <%}%>
@@ -108,12 +111,9 @@
 
             <!--Seção para mostrar todos os projetos -->
             <section id="todosProjetos">
+
                 <% for(let x = 0; x < projetos.length; x++){%>
                     <article>
-                        <!-- Cada href desse abaixo levará para o arquivo routes, 
-                            expandirProjetos, que captará o nome do projeto e url 
-                            do mesmo e após isso renderizar na página de expandir o projeto ejs
-                        -->
                         <!-- Quando clicar em cima da imagem desejada, automaticamente através do javascript aparecerá um modal, uma janela -->
                         <button onclick="expandirProjeto(this.value)" value="<%=projetos[x].url %>"><img src="image/tmp/uploads/<%=projetos[x].url %>" alt=""></button>
                         <p>
@@ -122,33 +122,40 @@
                     </article>
 
                     <!-- Neste span vamos abrir uma janela modal com o projeto em tamanho grande, real-->
-                    <span id="janela-modal-<%=projetos[x].url %>" class="d-esconder projeto-expandido">
+                    <span id="janela-modal-<%=projetos[x].url%>" class="d-esconder projeto-expandido">
+                        <p class="p-titulo">
+                            <%= projetos[x].tituloImagem %>
+                        </p>
                         <img src="image/tmp/uploads/<%=projetos[x].url %>">
-                        <button onclick="esconderProjeto(this.value)" value="<%=projetos[x].url %>">Fechar</button>
+                        <p class="p-descricao">
+                            <%= projetos[x].descricao %>
+                        </p>
+                        <p class="p-button">
+                            <button onclick="esconderProjeto(this.value)" value="<%=projetos[x].url %>">Fechar</button>
+                        </p>
                     </span>
-
                     <%}%>
-            </section>
-        </main>
-        <footer>
-            <span id="copyright">&copy;</span>
-            <h2>Desenvolvido por
-                <%=infoDesigne.nome%>
-            </h2>
-        </footer>
 
+            </section>
+
+            <footer id="rodape">
+
+            </footer>
+        </main>
+        <!--Script para criar a janela modal dinâmicamente e para adicionar o rodapé no fundo do body-->
         <script>
             function expandirProjeto(nomeImagem) {
-                document.getElementById("janela-modal-" + nomeImagem).className = "d-mostrar projeto-expandido"
+                document.getElementById("janela-modal-" + nomeImagem).className = "projeto-expandido"
             }
 
             function esconderProjeto(nomeImagem) {
                 document.getElementById("janela-modal-" + nomeImagem).className = "d-esconder projeto-expandido"
             }
-        </script>
 
-        <script src="js/script.js"></script>
+            document.getElementById("rodape").innerHTML = "<span id='copyright'>&copy;</span><h2>Desenvolvido por <%=infoDesigne.nome%></h2>"
+        </script>
     </div>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

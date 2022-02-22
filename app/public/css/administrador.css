@@ -1,3 +1,105 @@
+@font-face {
+    font-family: "Bebas Neue";
+    src: url(../../../fonts/BebasNeue-Regular.woff);
+}
+
+@font-face {
+    font-family: "Caveat";
+    src: url(../../../fonts/Caveat-Regular.woff);
+}
+
 body {
-    background: #c5c5c5
+    background: #222222;
+    color: white;
+    font-family: "Bebas Neue"
+}
+
+hgroup h1 {
+    color: #e7c282;
+    font-family: "Caveat";
+}
+
+
+/*estilização dos formulários*/
+
+form label,
+p,
+textarea {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    letter-spacing: 2px;
+}
+
+form input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    margin: 0 10px;
+}
+
+form input[type="submit"] {
+    color: #e7c282;
+    border: none;
+    font-size: 1.5rem;
+}
+
+form input[type="submit"]:hover {
+    transition: .2s;
+    background-color: #e7c282;
+    color: black;
+    padding: 3px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+/*estilizando formulário para visitantes*/
+
+h2 {
+    font-size: 1.5rem;
+    color: #e7c282;
+    width: max-content;
+    margin: 0 auto;
+}
+
+
+/*pagina de administração, administradores somente*/
+
+#projetos div {
+    margin: 20px auto;
+    /*float: left;*/
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+}
+
+#projetos div button {
+    width: 200px;
+    height: 30px;
+    align-self: center;
+    margin-top: 20px;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    color: #e7c282;
+}
+
+#projetos div img {
+    margin: 30px 0 0 0;
+    box-shadow: #1c1c1c 6px 6px 4px 1px;
+}
+
+#projetos div button:hover {
+    background: #e7c282;
+    cursor: pointer;
+    color: #222222;
+    transition: .2s;
+}
+
+.titulo-projeto {
+    font-size: 3rem;
+    align-self: center;
 }

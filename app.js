@@ -24,26 +24,19 @@ application.get("/api/:userId", function(req, res) {
             const find = await collection.find({ userId: req.params.userId }).toArray()
 
             var result = find.map(function(origem) {
-                return { titulo: origem.tituloProjeto, urlImagem: origem.imagemCapaProjeto, id: origem._id.toHexString() }
+                return { titulo: origem.tituloProjeto, urlImagem: origem.imagensProjeto, id: origem._id.toHexString() }
             })
-            
+
             var url = Array()
 
-            result.forEach((url_image, x, y) => {
+            result.forEach((url_image) => {
+
                 //achamos um problema no momento de substtuir o caminho (url da imagem). Dependendo do local em que o projeto é hospedado pode dar um erro no caminho, logo vamos usar o lastIndexOf para localizar a ultima barra que separa o caminho e o nome da imagem.
-                let urlLastBar = url_image.urlImagem.lastIndexOf("uploads") + 8
+                let urlLastBar = url_image.urlImagem.path.lastIndexOf("uploads") + 8
 
-<<<<<<< HEAD
-                var resultado = { titulo: url_image.titulo, url: url_image.urlImagem.substr(urlLastBar, url_image.length), idPost: url_image.id }
+                var resultado = { titulo: url_image.titulo, url: url_image.urlImagem.path.substr(urlLastBar, url_image.urlImagem.path.length), idPost: url_image.id }
 
                 url.push(resultado)
-=======
-                var resultado = { titulo: url_image.titulo, url: url_image.urlImagem.substr(73, url_image.length), idPost: url_image.id }
-                
-                url.push(resultado)
-
-                console.log(resultado)
->>>>>>> dd29f537b83c94537196cbf427142fec67c80aa4
             });
 
 

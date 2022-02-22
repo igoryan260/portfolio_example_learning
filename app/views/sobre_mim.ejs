@@ -10,8 +10,8 @@
     <meta name="robots" content="">
     <meta name="author" content="">
     <link rel="icon" href="">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/sobre_mim.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/servicos.css">
     <script src="https://kit.fontawesome.com/11a0ae1d38.js" crossorigin="anonymous"></script>
     <title>Serviços</title>
 </head>
@@ -21,40 +21,48 @@
         <header>
             <nav id="nav-principal">
                 <nav id="nav-info-perfil">
-                    <a href="#"><img src="image/images/perfil.jpg" alt="" id="imagem-perfil"></a>
-                    <a href="#"><span class="caveat">Roberto Designer</span></a>
+                    <a href="/"><img src="/image/images/perfil.jpg" alt="" id="imagem-perfil"></a>
+                    <a href="/"><span class="caveat"><%=infoDesigne.nome%></span></a>
                 </nav>
+
                 <nav id="nav-menu-desktop">
                     <ul id="menu-desktop">
                         <li>
                             <span id="contatos" class="itens-menu" onmouseover="mostrarContatos(); esconderHamburguer(); esconderConfiguracoes()" onmouseout="timeContatos()"><i class="far fa-comments"></i></span>
                             <ul id="subMenu-contatos" onmouseover="mostrarContatos()" onmouseout="esconderContatos()">
-                                <li><a href="#">Whatsapp</a></li>
-                                <li><a href="#">E-mail</a></li>
-                                <li><a href="#">Telefone</a></li>
+                                <li><a href="tel:+55<%=infoDesigne.whatsapp%>">Whatsapp</li>
+                                    <li><a href="mailto:<%=infoDesigne.email%>">E-mail</a></li>
+                                <li><a href="tel:+55<%=infoDesigne.telefone%>">Telefone</a></li>
                             </ul>
                         </li>
-                        <li>
+                        <!--Por enquanto vamos ocultar, deixar para as próximas atualizações a opção de trocar o tema do site, tanto para mobile quanto para desktop
+                    
+                          <li>
                             <span id="configuracoes" class="itens-menu" onmouseover="mostrarConfiguracoes(); esconderHamburguer(); esconderContatos()" onmouseout="timeConfiguracoes()"><i class="fas fa-cog"></i></span>
                             <ul id="subMenu-configuracoes" onmouseover="mostrarConfiguracoes()" onmouseout="esconderConfiguracoes()">
                                 <li><a href="#">Tema claro</a></li>
                                 <li><a href="#">Tema Escuro</a></li>
                             </ul>
                         </li>
+                    -->
                         <li>
                             <div id="menu-hamburguer" onmouseover="mostrarHamburguer(); esconderContatos(); esconderConfiguracoes()" onmouseout="timeHamburguer()">
                                 <div id="primeira-barra"></div>
                                 <div id="segunda-barra"></div>
                                 <div id="terceira-barra"></div>
                             </div>
+                            <!-- Criar rota para abrir página de serviços-->
                             <ul id="subMenu-hamburguer" onmouseover="mostrarHamburguer()" onmouseout="esconderHamburguer()">
-                                <li><a href="#">Sobre mim</a></li>
-                                <li><a href="#">Serviços</a></li>
+
+                                <li><a href="/visitante/sobreMim">Sobre mim</a></li>
+                                <li><a href="/visitante/servicos">Serviços</a></li>
+                                <li><a href="/visitante/sair">Sair</a></li>
                             </ul>
                         </li>
                     </ul>
                 </nav>
 
+                <!-- Preciso criar uma rota para renderizar a página de serviços-->
                 <nav id="nav-menu-mobile">
                     <span>Menu</span>
                     <ul>
@@ -66,29 +74,34 @@
                             <li><a href="#">Telefone</a></li>
                         </ul>
                         <li><a href="#">Serviços</a></li>
-                        <ul>
+                        <!--<ul>
                             <li><a href="#">Tema claro</a></li>
                             <li><a href="#">Tema Escuro</a></li>
-                        </ul>
+                        </ul>-->
                     </ul>
                 </nav>
             </nav>
         </header>
         <main>
-            <h1>Sobre mim</h1>
-            <article>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
-            </article>
+            <hgroup>
+                <h1>Sobre Mim</h1>
+            </hgroup>
+            <section>
+                <article>
+                    <p>
+                        <%=infoDesigne.sobreMim%>
+                    </p>
+                </article>
+            </section>
         </main>
         <footer>
             <span id="copyright">&copy;</span>
-            <h2>Desenvolvido por Roberto - 2021</h2>
+            <h2>Desenvolvido por
+                <%=infoDesigne.nome%>
+            </h2>
         </footer>
     </div>
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>

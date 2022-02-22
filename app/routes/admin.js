@@ -19,10 +19,14 @@ module.exports = (application) => {
         application.app.controllers.admin.register(req, res)
     })
 
-    application.post("/admin/new-post", multer(multerConfig).single("imagemCapaProjeto"), (req, res) => {
+    application.post("/admin/new-post", multer(multerConfig).single("imagensProjeto"), (req, res) => {
         //vamos enviar o request e o response para ser tratado no controller
+        /*application.app.controllers.admin.novaPostagem(req, res)*/
         application.app.controllers.admin.novaPostagem(req, res)
+
     })
+
+
 
     //rota para fazer logout, destruir a sessão criada
     application.get("/admin/sair", (req, res) => {

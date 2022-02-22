@@ -23,17 +23,24 @@
 
 <body>
     <form id="form-new-project" method="post" enctype="multipart/form-data" action="/admin/new-post">
+
         <legend>
             <h1>Adicionar Projeto</h1>
         </legend>
-        <label for="img-new-project">Escolha seu projeto</label>
-        <input type="file" name="imagemCapaProjeto"><br />
-        <label for="title-new-project">Título do projeto</label>
-        <input type="text" name="tituloProjeto" id="title-new-project">
-        <input type="submit" value="Enviar projeto">
-    </form>
 
-    <button><a href="/admin/sair">Sair</a></button>
+        <label for="img-new-project">Escolha seu projeto</label>
+        <input type="file" name="imagensProjeto" id="img-new-project"><br /><br />
+
+        <label for="title-new-project">Título do projeto</label>
+        <input type="text" name="tituloProjeto" id="title-new-project"><br /><br />
+
+        <label for="description">Descrição</label>
+        <input type="text" name="descricao" id="description"><br /><br />
+
+        <input type="submit" value="Enviar projeto">
+    </form><br /><br />
+
+    <button><a href="/admin/sair">Sair</a></button><br /><br />
 
     <!-- Esta parte em baixo será criada automaticamente para apresentar os projetos ao usuário que entrar como  link do 
      profissional-->
@@ -63,7 +70,7 @@
 
                 //criando as imagens e mostrando na tela de administrador
                 var div = document.createElement('div')
-                div.class = "projetos"
+                div.className = "projetos"
 
                 for (let index = 0; index < urlImages.length; index++) {
 
@@ -90,8 +97,6 @@
 
         }
         exibirProjetos()
-
-
 
         function excluirProjeto(idImagem, urlImagem) {
 

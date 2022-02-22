@@ -22,20 +22,41 @@ module.exports.visitar = (req, res) => {
                 var resultProjects = await collection_projects.find({ "userId": result._id.toHexString() }).toArray()
 
                 //na variável abaixo vamos formatar as informações vindas do banco de dados
-                var resultFormated = resultProjects.map(function(elemento, x) {
+                var resultFormated = resultProjects.map(function(elemento) {
+
                     let jsonResult = {
                         idProjeto: elemento._id.toHexString(),
                         tituloImagem: elemento.tituloProjeto,
-                        url: elemento.imagemCapaProjeto.substr((elemento.imagemCapaProjeto.lastIndexOf("uploads") + 8), elemento.imagemCapaProjeto.length)
+                        url: elemento.imagensProjeto.path.substr((elemento.imagensProjeto.path.lastIndexOf("uploads") + 8), elemento.imagensProjeto.path.length),
+                        descricao: elemento.descricao
                     }
 
                     return jsonResult;
                 })
 
-                console.log(resultFormated)
+                //na variável abaixo vamos formatar as informações vindas do banco de dados e pegar na ordem invertida
+                var reverseResultFormated = resultProjects.map(function(elemento) {
+
+                    let jsonResult = {
+                        idProjeto: elemento._id.toHexString(),
+                        tituloImagem: elemento.tituloProjeto,
+                        url: elemento.imagensProjeto.path.substr((elemento.imagensProjeto.path.lastIndexOf("uploads") + 8), elemento.imagensProjeto.path.length),
+                        descricao: elemento.descricao
+                    }
+
+                    return jsonResult;
+                })
 
                 //para captar também o endereço e titulos das imagens, vamos criar uma sessão diferente para ser mandado na variável 'projetos
                 req.session.resultFormated = resultFormated
+
+                //para criar as últimas postagens do banco de dados
+                req.session.ultimosProjetos = reverseResultFormated.reverse()
+
+                console.log(req.session.resultFormated)
+                console.log()
+                console.log()
+                console.log(req.session.ultimosProjetos)
 
                 //vamos criar uma sessão para autenticar o visitante, fazer o controle de renderização da página
                 req.session.visitanteAutenticado = true
@@ -47,6 +68,9 @@ module.exports.visitar = (req, res) => {
                 req.session.whatsapp = result.whatsapp
                 req.session.sobreMim = result.sobreMim
                 req.session.servicosPrestados = result.servicosPrestados
+
+                // para apresentar os últimos projetos feitos do designer, precisamos pegar o resultado do banco de dados e selecionar do último até o antepenúltimo
+
 
                 //res.render("index.ejs", { infoDesigne: req.session, projetos: req.session.resultFormated })
                 res.redirect("/")
