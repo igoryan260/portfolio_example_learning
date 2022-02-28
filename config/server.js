@@ -1,6 +1,7 @@
 const express = require("express");
 var consign = require("consign")
 const app = express()
+const cors = require("cors")
     //importar o express -session
 var expressSession = require('express-session')
 
@@ -16,6 +17,8 @@ app.set('views', './app/views')
 //configurando onde estão os arquivos estáticos da aplicação (css, js, images)
 //app.set(express.static('.app/public'))
 app.use(express.static('app/public'));
+
+app.use(cors());
 
 //configurando o middlware para reconhecer os dados de uma requisição via body
 app.use(express.urlencoded({ extended: true }))
