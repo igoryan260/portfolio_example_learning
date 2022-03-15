@@ -56,7 +56,7 @@ As tecnologias utilizadas no projeto
 ### Página inicial do portfolio
 
 <h1 align="center">
-  <img alt="PaginaInicial" title="#PaginaInicial" src="./assets/index.png" />
+  <img alt="PaginaInicial" title="#PaginaInicial" src="./assets/Index.png" />
 </h1>
 
 ## Requisitos para rodar esta aplicação
