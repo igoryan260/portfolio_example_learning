@@ -44,7 +44,20 @@ As tecnologias utilizadas no projeto
 - [css3][css3]
 - [mongodb][mongodb]
 
+### Features
+
+- [x] Cadastro de usuário &#41; Designer &#41;
+- [x] Uploads de projetos
+- [x] Exclusão de projetos
+- [ ] Mudança de temas &#40; Entre claro e escuro &#41;
+
 ## Demonstração da aplicação
+
+### Página inicial do portfolio
+
+<h1 align="center">
+  <img alt="PaginaInicial" title="#PaginaInicial" src="./assets/index.png" />
+</h1>
 
 ## Requisitos para rodar esta aplicação
 
