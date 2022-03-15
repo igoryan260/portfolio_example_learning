@@ -50,8 +50,9 @@ As tecnologias utilizadas no projeto
 
  - Ter o NODE.js instalado na máquina
  - Instalar as seguintes dependências :
-  nodemon; consign; mongodb; express; body-parser.
+  nodemon; consign; mongodb; express; body-parser; express; express-session; md5; multer; session; ejs; 
 
 ## Autor
 
-
+ - Igor &#40; Como desenvolvedor backend &#41;
+ - Othon &#40; Como desenvolvedor frontend e testes &#41;
