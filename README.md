@@ -102,7 +102,11 @@ As tecnologias utilizadas no projeto
 ### Visitante para ver sobre mim
 
 <h1 align="center">
-  <img alt="VisitanteSobreMim" title="#Visitante sobre mim" src="./assets/visitante (sobre mim).png" />
+<<<<<<< HEAD
+  <img alt="VisitanteSobreMim" title="#Visitante sobremim" src="./assets/visitante (sobre mim).png" />
+=======
+  <img alt="PaginaInicial" title="#PaginaInicial" src="./assets/Index.png" />
+>>>>>>> efa6e3508225ae3abdd47c864b8849fca8e31e9e
 </h1>
 
 ## Requisitos para rodar esta aplicação
