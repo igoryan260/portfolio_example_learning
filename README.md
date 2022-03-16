@@ -18,10 +18,9 @@ O dono do portfolio poderá:
 
 Layouts disponíveis neste link:
 
-<<<<<<< HEAD
+
 <a>https://drive.google.com/drive/folders/1etaWLMRTP3kW4XHZERfB-unQxt7FWbxj?usp=sharing</a>
-=======
->>>>>>> 6b069956ed3b58008ea2267b47835940eaab14c6
+
 
  ### Cores
 
@@ -102,7 +101,9 @@ As tecnologias utilizadas no projeto
 ### Visitante para ver sobre mim
 
 <h1 align="center">
+
   <img alt="VisitanteSobreMim" title="#Visitante sobremim" src="./assets/visitante (sobre mim).png" />
+
 </h1>
 
 ## Requisitos para rodar esta aplicação
