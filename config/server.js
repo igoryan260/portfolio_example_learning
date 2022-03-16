@@ -2,6 +2,7 @@ const express = require("express");
 var consign = require("consign")
 const app = express()
 const cool = require('cool-ascii-faces');
+const path = require('path');
 const cors = require("cors")
     //importar o express -session
 var expressSession = require('express-session')
@@ -9,10 +10,13 @@ var expressSession = require('express-session')
 //porta em que o servidor irá rodar
 let port = process.env.PORT || 80
 
+//onde as views estão localizadas
+app.set('views', path.join(__dirname, './app/views'))
+
 //configurando os motores de views (no caso será 'ejs' o nosso gerenciador de views)
 app.set('view-engine', 'ejs')
 
-//onde as views estão localizadas
+
 app.set('views', './app/views')
 
 //utilizando o cool
@@ -20,7 +24,8 @@ app.get('/cool', (req, res) => res.send(cool()))
 
 //configurando onde estão os arquivos estáticos da aplicação (css, js, images)
 //app.set(express.static('.app/public'))
-app.use(express.static('app/public'));
+//app.use(express.static('app/public'));
+app.use(express.static(path.join(__dirname, './app/public')))
 
 app.use(cors());
 
