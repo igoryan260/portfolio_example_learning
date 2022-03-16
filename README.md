@@ -34,15 +34,6 @@ Layouts disponíveis neste link:
  Caveat &#40; Regular &#41;
  Bebas Neue &#40; Regular &#41;
 
-## Tecnologias
-
-As tecnologias utilizadas no projeto
-
-- [HTML5][html5]
-- [node.js][node.js]
-- [css3][css3]
-- [mongodb][mongodb]
-
 ### Features
 
 - [x] Cadastro de usuário &#41; Designer &#41;
