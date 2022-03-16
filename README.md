@@ -135,6 +135,13 @@ $ npm start
 
 # O servidor inciará na porta:80 - acesse <http://localhost:80>
 ```
+
+### 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [Node.js](https://nodejs.org/en/)
+- [MongoDb](https://www.mongodb.com/)
 ## Autor
 
  - Igor &#40; Como desenvolvedor backend &#41;
