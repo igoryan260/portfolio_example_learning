@@ -147,4 +147,12 @@ Feito por Igor Yan 👋🏽 Entre em contato!
 
 [![Linkedin Badge](https://img.shields.io/badge/-Igor-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/igor-silva-66602a177/)](https://www.linkedin.com/in/igor-silva-66602a177/) 
 
- - Othon &#40; Como desenvolvedor frontend e testes &#41;
+### Contribuidores
+
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/othonss"><img style="border-radius: 50%;" src="./assets/othon.jpg" width="100px;"/><br /><sub><b>Othon</b></sub></a><br />
+    </td>
+  </tr>
+</table>
+
