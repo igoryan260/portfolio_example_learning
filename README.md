@@ -55,8 +55,54 @@ As tecnologias utilizadas no projeto
 
 ### Página inicial do portfolio
 
+  - Fazer login
+  - Cadastrar novo designer
+  - Visitar um portfolio
+
 <h1 align="center">
-  <img alt="PaginaInicial" title="#PaginaInicial" src="./assets/index.png" />
+  <img alt="PaginaInicial" title="#Pagina Inicial" src="./assets/Index.png" />
+</h1>
+
+### Página do administrador 
+
+<h1 align="center">
+  <img alt="PaginaAdm" title="#Pagina do Administrador" src="./assets/administrador.png" />
+</h1>
+
+### Excluir um projeto
+
+<h1 align="center">
+  <img alt="PaginaAdmExcluirProjeto" title="#Exclusão de projeto" src="./assets/administrador (excluir um projeto).png" />
+</h1>
+
+### Visitante
+
+<h1 align="center">
+  <img alt="PaginaVisitante" title="#Visitar portfolio" src="./assets/visitante.png" />
+</h1>
+
+### Visitante para expadir um projeto
+
+<h1 align="center">
+  <img alt="VisitanteExpandirProjeto" title="#Visitante expandir projeto" src="./assets/visitante (expandindo projeto).png" />
+</h1>
+
+### Visitante para ver contatos
+
+<h1 align="center">
+  <img alt="Visitantecontatos" title="#Visitante contatos" src="./assets/visitante (contatos).png" />
+</h1>
+
+### Visitante para ver serviços
+
+<h1 align="center">
+  <img alt="VisitanteServicos" title="#Visitante serviços" src="./assets/visitante (serviços).png" />
+</h1>
+
+### Visitante para ver sobre mim
+
+<h1 align="center">
+  <img alt="VisitanteSobreMim" title="#Visitante sobre mim" src="./assets/visitante (sobre mim).png" />
 </h1>
 
 ## Requisitos para rodar esta aplicação
