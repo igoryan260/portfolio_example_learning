@@ -17,7 +17,7 @@ app.set('views', path.join(__dirname, './app/views'))
 app.set('view-engine', 'ejs')
 
 
-app.set('views', './app/views')
+//app.set('views', './app/views')
 
 //utilizando o cool
 app.get('/cool', (req, res) => res.send(cool()))
