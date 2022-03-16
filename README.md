@@ -133,7 +133,18 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - [Node.js](https://nodejs.org/en/)
 - [MongoDb](https://www.mongodb.com/)
-## Autor
 
- - Igor &#40; Como desenvolvedor backend &#41;
+### Autor
+---
+
+
+ <img style="border-radius: 50%;" src="./assets/igor.JPG" width="100px;" alt=""/>
+ <br />
+ <sub><b>Igor Yan</b></sub>🚀
+
+
+Feito por Igor Yan 👋🏽 Entre em contato!
+
+[![Linkedin Badge](https://img.shields.io/badge/-Igor-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/igor-silva-66602a177/)](https://www.linkedin.com/in/igor-silva-66602a177/) 
+
  - Othon &#40; Como desenvolvedor frontend e testes &#41;
