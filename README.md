@@ -102,19 +102,38 @@ As tecnologias utilizadas no projeto
 ### Visitante para ver sobre mim
 
 <h1 align="center">
-<<<<<<< HEAD
   <img alt="VisitanteSobreMim" title="#Visitante sobremim" src="./assets/visitante (sobre mim).png" />
-=======
-  <img alt="PaginaInicial" title="#PaginaInicial" src="./assets/Index.png" />
->>>>>>> efa6e3508225ae3abdd47c864b8849fca8e31e9e
 </h1>
 
 ## Requisitos para rodar esta aplicação
 
- - Ter o NODE.js instalado na máquina
- - Instalar as seguintes dependências :
-  nodemon; consign; mongodb; express; body-parser; express; express-session; md5; multer; session; ejs; 
 
+Antes de continuar, instale as ferramentas de versionamento e desenvolvimento a seguir:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+
+### 🎲 Rodando o Back End (servidor)
+
+```bash
+#primeiro crie uma pasta no local que você desejar clonar o projeto em seu pc
+$ cd md <nome da pasta>
+
+# Acesse a pasta raiz do computador
+$ cd cd\ 
+
+# Através da raiz acesse a pasta do projeto (onde você criou a pasta) pelo terminal/cmd, por exemplo:
+$ cd documents/portfolio_example_learning
+
+# Dentro da pasta execute o seguinte comando e clone este repositório
+$ git clone <https://github.com/igoryan260/portfolio_example_learning>
+
+# No terminal, digite o seguinte para instalar as dependências
+$ npm install nodemon, consign, mongodb, express, body-parser, express, express-session, md5, multer, session, ejs --save
+
+# Execute a aplicação digitando o seguinte código
+$ npm start
+
+# O servidor inciará na porta:80 - acesse <http://localhost:80>
+```
 ## Autor
 
  - Igor &#40; Como desenvolvedor backend &#41;
