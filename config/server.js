@@ -11,21 +11,16 @@ var expressSession = require('express-session')
 let port = process.env.PORT || 80
 
 //onde as views estão localizadas
-app.set('views', path.join(__dirname, './app/views'))
+app.set('views', './app/views')
 
 //configurando os motores de views (no caso será 'ejs' o nosso gerenciador de views)
 app.set('view-engine', 'ejs')
-
-
-//app.set('views', './app/views')
 
 //utilizando o cool
 app.get('/cool', (req, res) => res.send(cool()))
 
 //configurando onde estão os arquivos estáticos da aplicação (css, js, images)
-//app.set(express.static('.app/public'))
-//app.use(express.static('app/public'));
-app.use(express.static(path.join(__dirname, './app/public')))
+app.use(express.static('app/public'));
 
 app.use(cors());
 
