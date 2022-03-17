@@ -12,17 +12,17 @@ module.exports = (application) => {
     })
 
     application.post('/admin/login', (req, res) => {
-        application.app.controllers.admin.login(req, res)
+        application.controllers.admin.login(req, res)
     })
 
     application.post('/admin/register', (req, res) => {
-        application.app.controllers.admin.register(req, res)
+        application.controllers.admin.register(req, res)
     })
 
     application.post("/admin/new-post", multer(multerConfig).single("imagensProjeto"), (req, res) => {
         //vamos enviar o request e o response para ser tratado no controller
         /*application.app.controllers.admin.novaPostagem(req, res)*/
-        application.app.controllers.admin.novaPostagem(req, res)
+        application.controllers.admin.novaPostagem(req, res)
 
     })
 
