@@ -1,3 +1,6 @@
+//variáveis de ambiente
+require("dotenv").config()
+
 //esta variável representa o framework que criptografa as informações confidenciais do usuário
 var md5 = require("md5")
 const { MongoClient } = require("mongodb")
