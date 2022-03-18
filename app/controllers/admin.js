@@ -1,15 +1,18 @@
 //esta variável representa o framework que criptografa as informações confidenciais do usuário
 var md5 = require("md5")
 const { MongoClient } = require("mongodb")
-var uri = "mongodb://localhost:27017"
 const client = new MongoClient(uri)
 const objectId = require("mongodb").ObjectId
+
+//coletando informação das variáveis de ambiente
+const dbUser = process.env.DB_USER;
+const dbSenha = process.env.DB_SENHA;
+
+const uri = `mongodb+srv://${dbUser}:${dbSenha}@cluster0.7gcf3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority;`
 
 module.exports.login = (req, res) => {
 
     const { MongoClient } = require("mongodb");
-    // Connection URI
-    const uri = "mongodb://localhost:27017";
     // Create a new MongoClient
     const client = new MongoClient(uri);
     async function run() {
@@ -65,9 +68,6 @@ module.exports.register = (req, res) => {
 
     //criando objeto do mongoclient
     const { MongoClient } = require("mongodb")
-
-    //uri da base de dados
-    const uri = "mongodb://localhost:27017"
 
     //instanciando o objeto mongo
     const client = new MongoClient(uri)

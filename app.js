@@ -1,3 +1,6 @@
+//variáveis de ambiente
+require("dotenv").config()
+
 //aqui temos que importar todas as configurações do servidor para o arquivo principal
 const application = require('./config/server.js')
     //vamos configurar aqui uma api para recuperar imagens do sistema de acordo com o usuário selecionado
@@ -8,10 +11,16 @@ const fs = require("fs")
 const res = require('express/lib/response')
 const { type } = require('express/lib/response')
 
+//coletando informação das variáveis de ambiente
+const dbUser = process.env.DB_USER;
+const dbSenha = process.env.DB_SENHA;
+
+const uri = `mongodb+srv://${dbUser}:${dbSenha}@cluster0.7gcf3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority;`
+
 application.get("/api/:userId", function(req, res) {
     async function run() {
 
-        let client = new MongoClient("mongodb://localhost:27017")
+        let client = new MongoClient(uri)
 
         try {
 
