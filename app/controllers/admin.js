@@ -4,7 +4,6 @@ require("dotenv").config()
 //esta variável representa o framework que criptografa as informações confidenciais do usuário
 var md5 = require("md5")
 const { MongoClient } = require("mongodb")
-const client = new MongoClient(uri)
 const objectId = require("mongodb").ObjectId
 
 //coletando informação das variáveis de ambiente
@@ -12,6 +11,8 @@ const dbUser = process.env.DB_USER;
 const dbSenha = process.env.DB_SENHA;
 
 const uri = `mongodb+srv://${dbUser}:${dbSenha}@cluster0.7gcf3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority;`
+
+const client = new MongoClient(uri)
 
 module.exports.login = (req, res) => {
 
