@@ -16,6 +16,9 @@ const client = new MongoClient(uri)
 
 module.exports.login = (req, res) => {
 
+    console.log(dbUser)
+    console.log(dbSenha)
+
     const { MongoClient } = require("mongodb");
     // Create a new MongoClient
     const client = new MongoClient(uri);
