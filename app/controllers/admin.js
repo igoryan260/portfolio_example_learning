@@ -10,7 +10,7 @@ const objectId = require("mongodb").ObjectId
 const dbUser = process.env.DB_USER;
 const dbSenha = process.env.DB_SENHA;
 
-const uri = `mongodb+srv://${dbUser}:${dbSenha}@cluster0.7gcf3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority;`
+const uri = `mongodb+srv://${dbUser}:${dbSenha}@cluster0.7gcf3.mongodb.net/Cluster0?retryWrites=true&w=majority;`
 
 const client = new MongoClient(uri)
 
